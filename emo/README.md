@@ -1,7 +1,9 @@
 # emogen
+
 Emo Band name generator
 
 ## Technical Details
+
 A purely JavaScript Emo Band name generator.
 
 Can be seeded with a text string or generates it's own random string if no text provided and generates a name based on that.
