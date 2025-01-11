@@ -9,6 +9,8 @@ build_search_index = false
 
 author = "Skullvalanche"
 
+generate_feeds = true
+
 # For overriding the default output directory `public`, set it to another value (e.g.: "docs")
 output_dir = "../blog"
 

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title></title>
+    <link rel="self" type="application/atom+xml" href="https://skullvalanche.com/blog/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://skullvalanche.com/blog"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-01-08T00:00:00+00:00</updated>
+    <id>https://skullvalanche.com/blog/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Mastodon Matters</title>
+        <published>2025-01-08T00:00:00+00:00</published>
+        <updated>2025-01-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Skullvalanche
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://skullvalanche.com/blog/mastodon-matters/"/>
+        <id>https://skullvalanche.com/blog/mastodon-matters/</id>
+        
+        <content type="html" xml:base="https://skullvalanche.com/blog/mastodon-matters/">&lt;p&gt;Apologies if this looks like a huge wall of text at first glance. Please stick with me.&lt;&#x2F;p&gt;
+&lt;p&gt;Really the title of this should be &quot;The Fediverse Matters&quot; but the word &quot;Fediverse&quot; is not widely recognized, and &lt;a href=&quot;https:&#x2F;&#x2F;joinmastodon.org&#x2F;&quot;&gt;Mastodon&lt;&#x2F;a&gt; is basically the dominant platform within the Fediverse, so ... here we are. Pedantry will get me nowhere.&lt;&#x2F;p&gt;
+&lt;p&gt;Social media, whether we like it or not, plays a significant role in shaping modern society.&lt;&#x2F;p&gt;
+&lt;p&gt;The history of social media thusfar has proven to me that any platform operated for profit is doomed to suffer &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Enshittification&quot;&gt;enshittification&lt;&#x2F;a&gt;. Sooner or later shareholders demand that the line goes up 📈 and principles fall to the way-side.&lt;&#x2F;p&gt;
+&lt;p&gt;But social media is now an integral part of modern life! Giant companies and organizations with massive influence over daily life leverage these platforms to sway public opinion constantly. Policy discussions happen on these platforms. &lt;em&gt;Governments&lt;&#x2F;em&gt; use these platforms to communicate to their citizens.&lt;&#x2F;p&gt;
+&lt;p&gt;And yet these platforms are owned and operated by private for profit entities? What A Terrible Idea™!&lt;&#x2F;p&gt;
+&lt;p&gt;So what does that leave us? &lt;em&gt;Protocols&lt;&#x2F;em&gt; rather than platforms.&lt;&#x2F;p&gt;
+&lt;p&gt;Twitter, Facebook, Tiktok, etc... those are &lt;em&gt;platforms&lt;&#x2F;em&gt;. They do not inter-operate with each other. They want to lock you in on their platform to get your precious ad revenue generating attention.&lt;&#x2F;p&gt;
+&lt;p&gt;Email, on the other hand, is a &lt;em&gt;protocol&lt;&#x2F;em&gt; -- you can send email from Gmail to Outlook or Yahoo or Proton or whatever. They all speak the same SMTP protocol. Protocols enable inter-operability.&lt;&#x2F;p&gt;
+&lt;p&gt;The Fediverse is built on top of the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;ActivityPub&quot;&gt;ActivityPub&lt;&#x2F;a&gt; &lt;em&gt;protocol&lt;&#x2F;em&gt; -- it means it can easily interoperate with any other server which also speaks ActivityPub.&lt;&#x2F;p&gt;
+&lt;p&gt;Part of the &quot;problem&quot; with platforms is the network effect -- the more people are on that platform, the harder it is to leave it, cuz all your connections are there.&lt;&#x2F;p&gt;
+&lt;p&gt;For example, think about Facebook. Lots of people at this point hate Facebook. Why is anyone still there? Because their connections are still there. Network effect. If you leave FB you may lose all those personal connections that only happen via FB.&lt;&#x2F;p&gt;
+&lt;p&gt;But what if you could take your network with you? That&#x27;s exactly what ActivityPub allows for. There&#x27;s a lot of platforms that work with ActivityPub: Mastodon, Lemmy, Pleroma, Pixelfed, etc - but they all can talk to eachother, so if you wanna use Pixelfed, but your buddy wants to use Mastodon... that&#x27;s fine! You can still at least see eachother&#x27;s content. And if you wanna switch from Pixelfed to Pleroma... that&#x27;s fine too, you can take your contact list with you and up n&#x27; move. Your buddy on Mastodon can stay there.&lt;&#x2F;p&gt;
+&lt;p&gt;Okay, but how does this solve the broader ailments of society?&lt;&#x2F;p&gt;
+&lt;p&gt;Because it allows for anyone to run their own social media platform, but still reach a global audience. The German government can run their own social media platform, hand out accounts to every government employee, and those gov employees can still have their social media posts received by people using a completely different platform run by a socialist collective in Peru. Protocols enable inter-operability and inter-operability avoids platform lock-in.&lt;&#x2F;p&gt;
+&lt;p&gt;If you don&#x27;t like the way your platform administrator is running things... you can hop to a different platform or even set up your own. All without worrying about having to &quot;start over&quot; rebuilding your connections. Network effect is mitigated.&lt;&#x2F;p&gt;
+&lt;p&gt;It also means you can seek out a platform which isn&#x27;t run by a sociopath billionaire. If your Fediverse server admin suddenly starts running things in new and distasteful ways... you are free to take your social network presence elsewhere.&lt;&#x2F;p&gt;
+&lt;p&gt;The irony of this rant is that I&#x27;m advocating for leaving those locked-in social network connections which you can&#x27;t take with you... but in theory this is a one-time concern. Once you&#x27;re the owner of your social network, that&#x27;s it, it&#x27;s yours from that point forward.&lt;&#x2F;p&gt;
+&lt;p&gt;Hopefully this convinces at least some folks to make the leap 🤞 - I will make a follow-up post about navigating the nuances of actually joining the Fediverse.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Fake Lego</title>
+        <published>2025-01-06T00:00:00+00:00</published>
+        <updated>2025-01-06T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Skullvalanche
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://skullvalanche.com/blog/fake-lego/"/>
+        <id>https://skullvalanche.com/blog/fake-lego/</id>
+        
+        <content type="html" xml:base="https://skullvalanche.com/blog/fake-lego/">&lt;p&gt;I&#x27;ve had this Shai Hulud &lt;strike&gt;Lego&lt;&#x2F;strike&gt; brick kit on my wishlist for a long time, and this past holiday someone finally got it for me. Yay!&lt;&#x2F;p&gt;
+&lt;img src=&quot;shai-hulud-not-lego.jpg&quot; alt=&quot;drawing&quot; width=&quot;500&quot;&#x2F;&gt;
+&lt;p&gt;The exercise of putting it together has reminded me why Lego™ is the leader in this domain. The fit and polish of this kit is not quite right. Some pieces are clearly of the &quot;Lego would never do that&quot; camp. In particular this kit relies a lot on tiny little nub pieces that allow you to connect the &quot;back&quot; of 2 bricks to eachother. It&#x27;s a clever hack, but it&#x27;s &lt;em&gt;so damn fiddly&lt;&#x2F;em&gt; that I can understand why lego never implemented such a mechanic.&lt;&#x2F;p&gt;
+&lt;p&gt;Also this kit uses some rubber connectors to give the worm flexibility-- which, again, is a clever hack, but Lego would never do that. There&#x27;d be some clever pivoting stuff instead.&lt;&#x2F;p&gt;
+&lt;p&gt;I guess I&#x27;m a Lego snob.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Gotta start somewhere</title>
+        <published>2025-01-03T00:00:00+00:00</published>
+        <updated>2025-01-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Skullvalanche
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://skullvalanche.com/blog/gotta-start-somewhere/"/>
+        <id>https://skullvalanche.com/blog/gotta-start-somewhere/</id>
+        
+        <content type="html" xml:base="https://skullvalanche.com/blog/gotta-start-somewhere/">&lt;p&gt;Occasionally I have an itch to write things which are probably best captured in a semi-permanent, semi-long form medium. &lt;a href=&quot;https:&#x2F;&#x2F;gladtech.social&#x2F;@skullvalanche&quot;&gt;Mastodon&lt;&#x2F;a&gt; posts are artificially short and (at least in my case) ephemeral on purpose.&lt;&#x2F;p&gt;
+&lt;p&gt;So I guess I&#x27;ll see how well this blog works out.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m currently using &lt;a href=&quot;https:&#x2F;&#x2F;getzola.org&quot;&gt;Zola&lt;&#x2F;a&gt; to generate the static files. I&#x27;m a total n00b to Zola, so this will likely start out looking quite minimal and maybe build up to be fancier over time? Or not! I&#x27;m a big fan of form-follows-function. What could be more functional than text on a page?&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m a bit disappointed that Zola doesn&#x27;t have better &quot;sensible defaults&quot; as far as output, but perhaps I&#x27;m just not using it in the same way that the software developer envisioned.&lt;&#x2F;p&gt;
+&lt;p&gt;The more my software development journey progresses, the more I recognize that it&#x27;s very easy to create a tool and think &quot;surely it&#x27;s obvious how to use this&quot; only to have someone immediately use it in an unexpected way and result in horrible bugs. Be empathetic with software developers.&lt;&#x2F;p&gt;
+&lt;p&gt;I wonder how I add a &quot;back&quot; link on these pages? Surely I can figure that out.&lt;&#x2F;p&gt;
+&lt;p&gt;Ah, yes, this will do:&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
