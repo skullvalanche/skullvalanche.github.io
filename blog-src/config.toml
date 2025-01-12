@@ -9,6 +9,7 @@ build_search_index = false
 
 author = "Skullvalanche"
 
+# https://www.getzola.org/documentation/templates/feeds/
 generate_feeds = true
 
 # For overriding the default output directory `public`, set it to another value (e.g.: "docs")

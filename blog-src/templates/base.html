@@ -2,16 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport meta tag -->
     <title>Skull's Blog</title>
     {% block rss %}
       <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
     {% endblock %}
+
     <style>
-      body {
+      .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
         max-width: 800px;
-        margin-left: 3em;
         font-size: medium;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: Georgia, 'Times New Roman', Times, serif;
       }
 
       .button-link {
