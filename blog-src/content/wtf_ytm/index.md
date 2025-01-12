@@ -11,7 +11,7 @@ At some point I need to just realize the blame is mine. This is me failing to ju
 
 Let's examine some evidence. Here's a lovely screenshot of the algo taking a playlist consisting (mostly) of Post-Punk, Post Rock, and Shoegaze artists... what do they suggest I add?
 
-<img src="wtf1.jpg" alt="a playlist consisting of a bunch of post-punk songs, followed by the suggestion to add Drake and Olivia Rodrigo to the playlist" width="600"/>
+<img src="wtf1.jpg" alt="a playlist consisting of a bunch of post-punk songs, followed by the suggestion to add Drake and Olivia Rodrigo to the playlist" width="100%"/>
 
 The top suggestion? More Cold Cave. Okay, that's a bit on-the-nose, but considering the playlist has an entire Cold Cave album in it, sure.
 
@@ -25,7 +25,7 @@ I would expect more from a company that is literally trying to lead the way on p
 
 Alright, let's try something else. I'll queue up 1 relatively obscure song by the Belarussian band Molchat Doma and see what the autoplay queues up for me.
 
-<img src="wtf2.jpg" alt="a playlist which rapidly steers towards the the most popular songs of the genre" width="600"/>
+<img src="wtf2.jpg" alt="a playlist which rapidly steers towards the the most popular songs of the genre" width="100%"/>
 
 Twin Tribes? ULTRA SUNN? okay, so far so good...
 
