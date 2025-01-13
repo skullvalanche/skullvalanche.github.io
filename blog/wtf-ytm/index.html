@@ -3,46 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Order matters: load pico first, then style.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="https://skullvalanche.com/blog/style.css">
     <title>Skull's Blog</title>
     
       <link rel="alternate" type="application/atom+xml" title="RSS" href="https://skullvalanche.com/blog/atom.xml">
     
-
-    <style>
-      .container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-        max-width: 800px;
-        font-size: 1.1em;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-      }
-
-      .button-link {
-        display: inline-block; /* Makes the <a> element behave like a block-level element */
-        padding: 5px 5px; /* Adds padding to give it a button-like appearance */
-        margin-bottom: 10px;
-        font-size: 16px; /* Sets the font size */
-        text-decoration: none; /* Removes the default underline on links */
-        color: white; /* Sets the text color */
-        background-color: rgb(164, 147, 168); /* Sets the background color */
-        border-radius: 5px; /* Rounds the corners */
-        border: none; /* Removes any default border */
-        cursor: pointer; /* Changes the cursor to a pointer on hover */
-        text-align: center; /* Centers the text */
-      }
-
-      .button-link:hover {
-        background-color: darkblue; /* Changes the background color on hover */
-      }
-
-      .button-link:active {
-        background-color: navy; /* Slightly darker color when the button is pressed */
-      }
-    </style>
   </head>
 
   <body>
+    <div id="theme-switcher">
+      <a href="#" data-theme-switcher="light">☀️</a><br/>
+      <a href="#" data-theme-switcher="dark">🌙</a><br/>
+    </div>
     <section class="section">
       <div class="container">
 <h1 class="title">
@@ -67,8 +42,9 @@
 <p>Okay, if I'm being generous, the <em>only</em> explanation for this kind of suggestion algorithm is if it's built around the idea "oh, maybe you might like some of the bands which were influences on the band you're currently listening to". I would expect better from a Google product though. Surely they have enough behavior data on me to know better than that.</p>
 <p>Do better, Youtube Music.</p>
 
-<a href=".." class="button-link">back</a>
+<button role="button" onclick="window.location.href='..';">back</button>
 </div>
     </section>
   </body>
+  <script src="https://skullvalanche.com/blog/js/minimal-theme-switcher.js"></script>
 </html>

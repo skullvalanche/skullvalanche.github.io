@@ -3,46 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Order matters: load pico first, then style.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="https://skullvalanche.com/blog/style.css">
     <title>Skull's Blog</title>
     
       <link rel="alternate" type="application/atom+xml" title="RSS" href="https://skullvalanche.com/blog/atom.xml">
     
-
-    <style>
-      .container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-        max-width: 800px;
-        font-size: 1.1em;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-      }
-
-      .button-link {
-        display: inline-block; /* Makes the <a> element behave like a block-level element */
-        padding: 5px 5px; /* Adds padding to give it a button-like appearance */
-        margin-bottom: 10px;
-        font-size: 16px; /* Sets the font size */
-        text-decoration: none; /* Removes the default underline on links */
-        color: white; /* Sets the text color */
-        background-color: rgb(164, 147, 168); /* Sets the background color */
-        border-radius: 5px; /* Rounds the corners */
-        border: none; /* Removes any default border */
-        cursor: pointer; /* Changes the cursor to a pointer on hover */
-        text-align: center; /* Centers the text */
-      }
-
-      .button-link:hover {
-        background-color: darkblue; /* Changes the background color on hover */
-      }
-
-      .button-link:active {
-        background-color: navy; /* Slightly darker color when the button is pressed */
-      }
-    </style>
   </head>
 
   <body>
+    <div id="theme-switcher">
+      <a href="#" data-theme-switcher="light">☀️</a><br/>
+      <a href="#" data-theme-switcher="dark">🌙</a><br/>
+    </div>
     <section class="section">
       <div class="container">
 <h1 class="title">
@@ -69,8 +44,9 @@
 <p>The irony of this rant is that I'm advocating for leaving those locked-in social network connections which you can't take with you... but in theory this is a one-time concern. Once you're the owner of your social network, that's it, it's yours from that point forward.</p>
 <p>Hopefully this convinces at least some folks to make the leap 🤞 - I will make a follow-up post about navigating the nuances of actually joining the Fediverse.</p>
 
-<a href=".." class="button-link">back</a>
+<button role="button" onclick="window.location.href='..';">back</button>
 </div>
     </section>
   </body>
+  <script src="https://skullvalanche.com/blog/js/minimal-theme-switcher.js"></script>
 </html>

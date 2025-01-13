@@ -3,48 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Order matters: load pico first, then style.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
     <title>Skull's Blog</title>
     {% block rss %}
       <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
     {% endblock %}
-
-    <style>
-      .container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-        max-width: 800px;
-        font-size: 1.1em;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-      }
-
-      .button-link {
-        display: inline-block; /* Makes the <a> element behave like a block-level element */
-        padding: 5px 5px; /* Adds padding to give it a button-like appearance */
-        margin-bottom: 10px;
-        font-size: 16px; /* Sets the font size */
-        text-decoration: none; /* Removes the default underline on links */
-        color: white; /* Sets the text color */
-        background-color: rgb(164, 147, 168); /* Sets the background color */
-        border-radius: 5px; /* Rounds the corners */
-        border: none; /* Removes any default border */
-        cursor: pointer; /* Changes the cursor to a pointer on hover */
-        text-align: center; /* Centers the text */
-      }
-
-      .button-link:hover {
-        background-color: darkblue; /* Changes the background color on hover */
-      }
-
-      .button-link:active {
-        background-color: navy; /* Slightly darker color when the button is pressed */
-      }
-    </style>
   </head>
 
   <body>
+    <div id="theme-switcher">
+      <a href="#" data-theme-switcher="light">☀️</a><br/>
+      <a href="#" data-theme-switcher="dark">🌙</a><br/>
+    </div>
     <section class="section">
       <div class="container">{% block content %} {% endblock %}</div>
     </section>
   </body>
+  <script src="{{ get_url(path='js/minimal-theme-switcher.js') }}"></script>
 </html>
