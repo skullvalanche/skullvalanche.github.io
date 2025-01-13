@@ -1,40 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Order matters: load pico first, then style.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="../blog/style.css" />
     <title>Stoner Rock Band Name Generator</title>
     <script src="bandgen.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <meta name="description" content="Stoner Rock Band Name Generator" />
-    <style>
-      body {
-        font: 1em Century Gothic, sans-serif;
-      }
-    </style>
   </head>
 
   <body>
-    <p>Generate your Stoner Rock band name!</p>
-    <p>
-    <form>
-      <input placeholder="Your Name" type="text" id="fullName" size="30" />
-      <br />
-      <input type="submit" value="Generate" id="ebmSubmit" />
-      <br />
-    </form>
-    </p>
-    <p><div id="msgField"></div></p>
-    <hr>
-    <p>Not Familiar with Stoner Rock?</p>
-    <p>
-      <a href="https://en.wikipedia.org/wiki/Stoner_rock"
-        >Lemme Wikipedia That For You</a
-      >
-    </p>
-    <p>
-      <a
-        href="https://en.wikipedia.org/wiki/Category:Stoner_rock_musical_groups"
-        >Here's a list of real Stoner Rock bands</a
-      >
-    </p>
+    <div class="container">
+      <h1>Generate your Stoner Rock band name!</h1>
+      <form>
+        <input placeholder="Your Name" type="text" id="fullName" size="30" />
+        <input type="submit" value="Generate" id="ebmSubmit" />
+      </form>
+      <div id="msgField">&nbsp;</div>
+      <h2>Not Familiar with Stoner Rock?</h2>
+      <p>
+        <a href="https://en.wikipedia.org/wiki/Stoner_rock"
+          >Lemme Wikipedia That For You</a
+        >
+      </p>
+      <p>
+        <a href="https://en.wikipedia.org/wiki/List_of_stoner_rock_bands"
+          >List of Stoner Rock bands</a
+        >
+      </p>
+      <h2>About Stoner Rock band names</h2>
+      <p>
+        Band names tend to be references to weed, nature, magic, outer space, or combinations of those things. The colors black,
+        red and green feature frequently.
+      </p>
+      <h2>Actual Stone Rock Bands (examples)</h2>
+      <ul>
+        <li>Acid King</li>
+        <li>Bongzilla</li>
+        <li>Bongripper</li>
+        <li>Black Sabbath</li>
+        <li>Electric Wizard</li>
+        <li>Green Lung</li>
+        <li>Holy Mountain</li>
+        <li>Red Fang</li>
+        <li>Weedeater</li>
+        <li>Weedpecker</li>
+        <li>Mars Red Sky</li>
+        <li>Black Sky Giant</li>
+        <li>Lowrider</li>
+        <li>Spaceslug</li>
+        <li>The Sword</li>
+      </ul>
+    </div>
   </body>
 </html>

@@ -1,31 +1,27 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Emo Band Name Generator</title>
-  <script src="emogen.js"></script>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <meta name="description" content="Emo Band Name Generator" />
-  <style>
-    body {
-      font: 1em Century Gothic, sans-serif;
-    }
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Order matters: load pico first, then style.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="../blog/style.css">
+    <title>Emo Band Name Generator</title>
+    <script src="emogen.js"></script>
 </head>
 
 <body>
-  <h1>Generate your Emo band name!</h1>
-  <br />
-  <form>
-    <input placeholder="Your Name" type="text" id="fullName" size="30">
-    <br />
-    <input type="submit" value="Submit" id="emoSubmit">
-    <br />
-  </form>
-  <div id="msgField"></div>
-  <h2>No clue what Emo is?</h2>
-  <p><a href="http://en.wikipedia.org/wiki/Emo" target="_BLANK">Lemme Wikipedia That For You</a></p>
-  <p><a href="https://en.wikipedia.org/wiki/List_of_emo_artists" target="_BLANK">Here's a list of real Emo artists</a>
+  <div class="container">
+    <h1>Generate your Emo band name!</h1>
+    <form>
+      <input placeholder="Your Name" type="text" id="fullName" size="30">
+      <input type="submit" value="Submit" id="emoSubmit">
+    </form>
+    <div id="msgField">&nbsp;</div>
+    <h2>No clue what Emo is?</h2>
+    <p><a href="http://en.wikipedia.org/wiki/Emo">Lemme Wikipedia That For You</a></p>
+    <p><a href="https://en.wikipedia.org/wiki/List_of_emo_artists">Here's a list of real Emo artists</a>
     <h2>About Emo Band Names</h2>
     <p>Emo bands of the 90's tend to have names which look like sentence fragments. They often incorporated names of
       locations or units of time measurement.</p>
@@ -47,6 +43,7 @@
       <li>And Then There Were None</li>
       <li>Texas is the Reason</li>
     </ul>
+  </div>
 </body>
 
 </html>
