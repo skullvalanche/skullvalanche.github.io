@@ -52,8 +52,10 @@ content&amp;#x2F;2025-01-13&amp;#x2F;image2.jpg
 &lt;h2 id=&quot;github-pages&quot;&gt;Github Pages&lt;&#x2F;h2&gt;
 &lt;p&gt;The other part of this blog&#x27;s tech stack is &lt;a href=&quot;https:&#x2F;&#x2F;pages.github.com&quot;&gt;Github Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;There&#x27;s not really much to say about GH Pages that isn&#x27;t already in the linked docs above. I just figured if I&#x27;m gonna use a very code centric approach to having a blog, might as well just host it (for free) from Github.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;comments-via-giscus&quot;&gt;Comments via giscus&lt;&#x2F;h2&gt;
+&lt;p&gt;To enable comments on your blog, you can integrate Giscus, a comments widget that uses GitHub Discussions. See https:&#x2F;&#x2F;giscus.app for how to set it up.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;final-ramblings&quot;&gt;Final ramblings&lt;&#x2F;h2&gt;
-&lt;p&gt;Hopefully this is somewhat helpful. I may look into adding a comment feature on this blog at some point, but for the moment, &lt;a href=&quot;https:&#x2F;&#x2F;gladtech.social&#x2F;@skullvalanche&quot;&gt;Mastodon&lt;&#x2F;a&gt;&#x27;ll work. 😁&lt;&#x2F;p&gt;
+&lt;p&gt;Hopefully this is somewhat helpful.&lt;&#x2F;p&gt;
 &lt;p&gt;P.S. bonus heart container if you get the reference in the title.&lt;&#x2F;p&gt;
 </content>
         
