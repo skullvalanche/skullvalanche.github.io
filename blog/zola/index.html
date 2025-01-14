@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Order matters: load pico first, then style.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="https://skullvalanche.com/blog/style.css">
+    <title>Skull's Blog</title>
+    
+      <link rel="alternate" type="application/atom+xml" title="RSS" href="https://skullvalanche.com/blog/atom.xml">
+    
+  </head>
+
+  <body>
+    <div id="theme-switcher">
+      <a href="#" data-theme-switcher="light">☀️</a><br/>
+      <a href="#" data-theme-switcher="dark">🌙</a><br/>
+    </div>
+    <section class="section">
+      <div class="container">
+<h1 class="title">
+  Zola&#x27;s ball
+</h1>
+<p class="subtitle"><strong>2025-01-14</strong></p>
+<p>Warning: while I will do my best not to make too many assumptions about the tech savviness of my readers, this is a deep dive into the tech I use to run this blog.</p>
+<p>Someone asked what technologies I'm using to host this blog. While I have a background in web development about 20 years ago, I'm extremely rusty in almost all ways that matter. I also know enough to know that the modern web is a hellscape of javascript frameworks, typescript pre-processors, and Beelzebub knows what else. This is a goddamn blog. It's text and images. This shit could run on a calculator. I don't want to have to think too hard about adding new text and images.</p>
+<p>I'd rather not have to monkey with writing HTML code just to post a new entry, and I'm reasonably familiar with <a href="https://www.markdownguide.org/">Markdown</a>, so a <a href="https://en.wikipedia.org/wiki/Static_site_generator">static site generator</a> just made the most sense.</p>
+<p>TLDR for the people who's eyes are already glazing over: I write some plain text markdown files, and then I run an app called <a href="https://getzola.org">Zola</a> that turns those text files into HTML files I can upload to a web server.</p>
+<h2 id="why-zola">Why Zola?</h2>
+<p>There's <em>a lot</em> of SSGs out there, but most of them are written in Node or Python or other languages which have a tendency to either mess with your system's environment, or I would need to install the SSG in a virtual environment. Both of those options sound like extra headache I do not want to have to think about.</p>
+<p>Zola is a single binary executable. Everything it needs in order to run is baked into a single file. No mess, no fuss.</p>
+<h2 id="using-zola">Using Zola</h2>
+<p><strong>Warning: There is no GUI for Zola.</strong></p>
+<p>If you are looking for a drag-and-drop solution with pretty buttons and such, Zola is not that. If you are familiar with command-line stuff, setting up Zola will be fairly straightforward. Command-line skills are well beyond the scope of this blog post. 😅</p>
+<p>The rest of this post assumes some familiarity with the particulars of web hosting, HTML, CSS, Javascript, and command-line tools.</p>
+<p><a href="https://www.getzola.org/documentation/getting-started/overview/#first-steps-with-zola">This page</a> pretty well walks you through how to get started with Zola.</p>
+<p>I'm not gonna reinvent their documentation. Instead I'm gonna mostly focus on the things that tripped me up initially.</p>
+<p>In the root of your freshly initialized site folder there's a <code>config.toml</code> file. This is where your customized settings live.</p>
+<p>I added the line <code>generate_feeds = true</code> so I could have an Atom RSS feed. This is a blog after all, people should be able to subscribe to it. Other than that, mostly I just disabled features which I knew I wouldn't need, and modified some file paths since the blog is a sub-section of skullvalanche.com, rather than the full thing. You can see my full config file <a href="https://github.com/skullvalanche/skullvalanche.github.io/blob/main/blog-src/config.toml">here</a></p>
+<p>The other things that proved to be non-obvious involved where to put files when writing blog posts.</p>
+<p>The Zola docs walked me through setting up template files, and that was all fine, but I wanted to put a javascript file somewhere. I also wanted to put a CSS file somewhere. Where do those go? How do I reference them?</p>
+<p>There's a folder named <code>static</code> which is for - you guessed it - static asset files. Things which aren't markdown to be rendered, but still need to exist for your HTML output files to work. I went with <code>static/style.css</code> and my js file in <code>static/js/minimal-theme-switcher.js</code> -- then to reference these files in my in my templates I had to use <code>{{ get_url(path='style.css') }}</code> and <code>{{ get_url(path='js/minimal-theme-switcher.js') }}</code> respectively. The templating language is clearly very powerful, but I haven't done a deep dive into using it yet. The docs are well written. Watch out for Rickrolls.</p>
+<p>Text only blog posts can just be markdown files in the root of content. e.g. <code>content/2025-01-13.md</code></p>
+<p>Blog posts which have "accompanying" files, like images, need to be in folders along with their files. Also the file should be named <code>index.md</code></p>
+<p>e.g.</p>
+<pre><code>content&#x2F;2025-01-13&#x2F;index.md
+content&#x2F;2025-01-13&#x2F;image1.jpg
+content&#x2F;2025-01-13&#x2F;image2.jpg
+</code></pre>
+<p>Honestly, just clicking around my <a href="https://github.com/skullvalanche/skullvalanche.github.io/tree/main/blog-src">blog-src</a> folder will probably give a decent concept of how things are structured.</p>
+<p>Once you're ready to turn your markdown into HTML, <code>zola build</code> will quickly generate your output files into the folder specified in your config. That's about it. You can upload the resulting output to whatever hosting solution you wish.</p>
+<h2 id="github-pages">Github Pages</h2>
+<p>The other part of this blog's tech stack is <a href="https://pages.github.com">Github Pages</a></p>
+<p>There's not really much to say about GH Pages that isn't already in the linked docs above. I just figured if I'm gonna use a very code centric approach to having a blog, might as well just host it (for free) from Github.</p>
+<h2 id="final-ramblings">Final ramblings</h2>
+<p>Hopefully this is somewhat helpful. I may look into adding a comment feature on this blog at some point, but for the moment, <a href="https://gladtech.social/@skullvalanche">Mastodon</a>'ll work. 😁</p>
+<p>P.S. bonus heart container if you get the reference in the title.</p>
+
+<button role="button" onclick="window.location.href='..';">back</button>
+</div>
+    </section>
+  </body>
+  <script src="https://skullvalanche.com/blog/js/minimal-theme-switcher.js"></script>
+</html>

@@ -4,8 +4,60 @@
     <link rel="self" type="application/atom+xml" href="https://skullvalanche.com/blog/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://skullvalanche.com/blog"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-01-13T00:00:00+00:00</updated>
+    <updated>2025-01-14T00:00:00+00:00</updated>
     <id>https://skullvalanche.com/blog/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Zola&#x27;s ball</title>
+        <published>2025-01-14T00:00:00+00:00</published>
+        <updated>2025-01-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Skullvalanche
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://skullvalanche.com/blog/zola/"/>
+        <id>https://skullvalanche.com/blog/zola/</id>
+        
+        <content type="html" xml:base="https://skullvalanche.com/blog/zola/">&lt;p&gt;Warning: while I will do my best not to make too many assumptions about the tech savviness of my readers, this is a deep dive into the tech I use to run this blog.&lt;&#x2F;p&gt;
+&lt;p&gt;Someone asked what technologies I&#x27;m using to host this blog. While I have a background in web development about 20 years ago, I&#x27;m extremely rusty in almost all ways that matter. I also know enough to know that the modern web is a hellscape of javascript frameworks, typescript pre-processors, and Beelzebub knows what else. This is a goddamn blog. It&#x27;s text and images. This shit could run on a calculator. I don&#x27;t want to have to think too hard about adding new text and images.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;d rather not have to monkey with writing HTML code just to post a new entry, and I&#x27;m reasonably familiar with &lt;a href=&quot;https:&#x2F;&#x2F;www.markdownguide.org&#x2F;&quot;&gt;Markdown&lt;&#x2F;a&gt;, so a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Static_site_generator&quot;&gt;static site generator&lt;&#x2F;a&gt; just made the most sense.&lt;&#x2F;p&gt;
+&lt;p&gt;TLDR for the people who&#x27;s eyes are already glazing over: I write some plain text markdown files, and then I run an app called &lt;a href=&quot;https:&#x2F;&#x2F;getzola.org&quot;&gt;Zola&lt;&#x2F;a&gt; that turns those text files into HTML files I can upload to a web server.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-zola&quot;&gt;Why Zola?&lt;&#x2F;h2&gt;
+&lt;p&gt;There&#x27;s &lt;em&gt;a lot&lt;&#x2F;em&gt; of SSGs out there, but most of them are written in Node or Python or other languages which have a tendency to either mess with your system&#x27;s environment, or I would need to install the SSG in a virtual environment. Both of those options sound like extra headache I do not want to have to think about.&lt;&#x2F;p&gt;
+&lt;p&gt;Zola is a single binary executable. Everything it needs in order to run is baked into a single file. No mess, no fuss.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;using-zola&quot;&gt;Using Zola&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Warning: There is no GUI for Zola.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;If you are looking for a drag-and-drop solution with pretty buttons and such, Zola is not that. If you are familiar with command-line stuff, setting up Zola will be fairly straightforward. Command-line skills are well beyond the scope of this blog post. 😅&lt;&#x2F;p&gt;
+&lt;p&gt;The rest of this post assumes some familiarity with the particulars of web hosting, HTML, CSS, Javascript, and command-line tools.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;#first-steps-with-zola&quot;&gt;This page&lt;&#x2F;a&gt; pretty well walks you through how to get started with Zola.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m not gonna reinvent their documentation. Instead I&#x27;m gonna mostly focus on the things that tripped me up initially.&lt;&#x2F;p&gt;
+&lt;p&gt;In the root of your freshly initialized site folder there&#x27;s a &lt;code&gt;config.toml&lt;&#x2F;code&gt; file. This is where your customized settings live.&lt;&#x2F;p&gt;
+&lt;p&gt;I added the line &lt;code&gt;generate_feeds = true&lt;&#x2F;code&gt; so I could have an Atom RSS feed. This is a blog after all, people should be able to subscribe to it. Other than that, mostly I just disabled features which I knew I wouldn&#x27;t need, and modified some file paths since the blog is a sub-section of skullvalanche.com, rather than the full thing. You can see my full config file &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;skullvalanche&#x2F;skullvalanche.github.io&#x2F;blob&#x2F;main&#x2F;blog-src&#x2F;config.toml&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The other things that proved to be non-obvious involved where to put files when writing blog posts.&lt;&#x2F;p&gt;
+&lt;p&gt;The Zola docs walked me through setting up template files, and that was all fine, but I wanted to put a javascript file somewhere. I also wanted to put a CSS file somewhere. Where do those go? How do I reference them?&lt;&#x2F;p&gt;
+&lt;p&gt;There&#x27;s a folder named &lt;code&gt;static&lt;&#x2F;code&gt; which is for - you guessed it - static asset files. Things which aren&#x27;t markdown to be rendered, but still need to exist for your HTML output files to work. I went with &lt;code&gt;static&#x2F;style.css&lt;&#x2F;code&gt; and my js file in &lt;code&gt;static&#x2F;js&#x2F;minimal-theme-switcher.js&lt;&#x2F;code&gt; -- then to reference these files in my in my templates I had to use &lt;code&gt;{{ get_url(path=&#x27;style.css&#x27;) }}&lt;&#x2F;code&gt; and &lt;code&gt;{{ get_url(path=&#x27;js&#x2F;minimal-theme-switcher.js&#x27;) }}&lt;&#x2F;code&gt; respectively. The templating language is clearly very powerful, but I haven&#x27;t done a deep dive into using it yet. The docs are well written. Watch out for Rickrolls.&lt;&#x2F;p&gt;
+&lt;p&gt;Text only blog posts can just be markdown files in the root of content. e.g. &lt;code&gt;content&#x2F;2025-01-13.md&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Blog posts which have &quot;accompanying&quot; files, like images, need to be in folders along with their files. Also the file should be named &lt;code&gt;index.md&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;e.g.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;content&amp;#x2F;2025-01-13&amp;#x2F;index.md
+content&amp;#x2F;2025-01-13&amp;#x2F;image1.jpg
+content&amp;#x2F;2025-01-13&amp;#x2F;image2.jpg
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Honestly, just clicking around my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;skullvalanche&#x2F;skullvalanche.github.io&#x2F;tree&#x2F;main&#x2F;blog-src&quot;&gt;blog-src&lt;&#x2F;a&gt; folder will probably give a decent concept of how things are structured.&lt;&#x2F;p&gt;
+&lt;p&gt;Once you&#x27;re ready to turn your markdown into HTML, &lt;code&gt;zola build&lt;&#x2F;code&gt; will quickly generate your output files into the folder specified in your config. That&#x27;s about it. You can upload the resulting output to whatever hosting solution you wish.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;github-pages&quot;&gt;Github Pages&lt;&#x2F;h2&gt;
+&lt;p&gt;The other part of this blog&#x27;s tech stack is &lt;a href=&quot;https:&#x2F;&#x2F;pages.github.com&quot;&gt;Github Pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;There&#x27;s not really much to say about GH Pages that isn&#x27;t already in the linked docs above. I just figured if I&#x27;m gonna use a very code centric approach to having a blog, might as well just host it (for free) from Github.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;final-ramblings&quot;&gt;Final ramblings&lt;&#x2F;h2&gt;
+&lt;p&gt;Hopefully this is somewhat helpful. I may look into adding a comment feature on this blog at some point, but for the moment, &lt;a href=&quot;https:&#x2F;&#x2F;gladtech.social&#x2F;@skullvalanche&quot;&gt;Mastodon&lt;&#x2F;a&gt;&#x27;ll work. 😁&lt;&#x2F;p&gt;
+&lt;p&gt;P.S. bonus heart container if you get the reference in the title.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Thanks Stevie</title>
         <published>2025-01-13T00:00:00+00:00</published>
