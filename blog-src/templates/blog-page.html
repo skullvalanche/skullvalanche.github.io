@@ -22,5 +22,24 @@
         data-loading="lazy"
         crossorigin="anonymous"
         async>
+   
+  function changeGiscusTheme () {
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ?  'dark' : 'light'
+
+    function sendMessage(message) {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe) return;
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: theme
+      }
+    });
+  }
+</script>
+<script>
+  changeGiscusTheme();
 </script>
 {% endblock content %}
