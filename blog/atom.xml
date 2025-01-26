@@ -4,8 +4,49 @@
     <link rel="self" type="application/atom+xml" href="https://skullvalanche.com/blog/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://skullvalanche.com/blog"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-01-14T00:00:00+00:00</updated>
+    <updated>2025-01-26T00:00:00+00:00</updated>
     <id>https://skullvalanche.com/blog/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Rapid Prototyping with 3D printing</title>
+        <published>2025-01-26T00:00:00+00:00</published>
+        <updated>2025-01-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Skullvalanche
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://skullvalanche.com/blog/rapid-prototyping/"/>
+        <id>https://skullvalanche.com/blog/rapid-prototyping/</id>
+        
+        <content type="html" xml:base="https://skullvalanche.com/blog/rapid-prototyping/">&lt;p&gt;&lt;em&gt;Author&#x27;s Note:&lt;&#x2F;em&gt; Many folks reading this may not know or care about 3D printing, so I&#x27;ll try to keep the technical jargon to a minimum.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve been working on improving my CAD skills lately. I&#x27;ve had a 3D printer for a few years now, but for much of that time I mostly would just download other people&#x27;s 3D models from various sites and print them. My ability to &lt;em&gt;imagine&lt;&#x2F;em&gt; a thing in my mind and then just make it into a physical thing was quite limited by my inability to use &lt;em&gt;real&lt;&#x2F;em&gt; CAD software.&lt;&#x2F;p&gt;
+&lt;p&gt;I mostly used &lt;a href=&quot;https:&#x2F;&#x2F;tinkercad.com&quot;&gt;TinkerCAD&lt;&#x2F;a&gt; for very simple designs. I could make a box. I could make a cylinder. I could make a sphere. I could combine those things in various ways, but it never really resulted in &lt;em&gt;slick&lt;&#x2F;em&gt; looking designs, just minimally functional.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m now getting much better at using &lt;a href=&quot;https:&#x2F;&#x2F;onshape.com&quot;&gt;Onshape&lt;&#x2F;a&gt; which is way more full featured, but also a way steeper learning curve.&lt;&#x2F;p&gt;
+&lt;p&gt;Now is the time when I give a shout-out to Michael Laws for his Youtube series &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLGqRUdq5ULsONnjEEPeBxxStEsobDKAtV&quot;&gt;3D Design for 3D Printing&lt;&#x2F;a&gt;. Hugely helpful.&lt;&#x2F;p&gt;
+&lt;p&gt;With the increased complexity of designs I&#x27;m able to accomplish, I&#x27;m learning the importance of &quot;will this little mechanical part work?&quot; -- hinges, screw holes, interlocking parts, and all the other exacting aspects of a functional thingie often require a cycle of printing the thing, testing it, and adjusting the model again. 3D models on a computer are very exact, but the strand of hot plastic goo that comes out of a 3D printer is nowhere near as exact.&lt;&#x2F;p&gt;
+&lt;p&gt;The cycle of design -&amp;gt; print -&amp;gt; adjust design -&amp;gt; print can be quite time consuming. 3D prints can take many hours to complete depending on size, and it is quite frustrating to wait many hours for something to print only to find out that the measurements in your computer model don&#x27;t work once they&#x27;re printed in the really real world.&lt;&#x2F;p&gt;
+&lt;p&gt;Fortunately, there&#x27;s a trick one can do to make the adjust + printing cycle much faster. As an example, I&#x27;ll use a project I&#x27;m working on right now, which involves a part that slides into a groove on another part, and a screw that will lock the slider in place.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;skullvalanche.com&#x2F;blog&#x2F;rapid-prototyping&#x2F;model.png&quot; alt=&quot;3D Model&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I need to make sure the screw and the screw hole work well together. I also need to make sure the slider slab fits in the groove cut-out.&lt;&#x2F;p&gt;
+&lt;p&gt;When 3D printing stuff, you load your 3D model into an app called a &quot;slicer&quot; which plots out the path that the printer will follow as it builds up your print out of many very thin layers (slices).&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s an example of what that looks like:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;skullvalanche.com&#x2F;blog&#x2F;rapid-prototyping&#x2F;full-slice.png&quot; alt=&quot;fully sliced= model&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Notice down in the corner it estimates that printing this stuff will take 67 minutes to print.&lt;&#x2F;p&gt;
+&lt;p&gt;BUT, this is a slicer application! In addition to &quot;slicing&quot; your model into many horizontal layers, The slicer can also make arbitrary cuts in your model, allowing you to discard the parts that don&#x27;t need testing. You can just print the portion of your model that needs testing!&lt;&#x2F;p&gt;
+&lt;p&gt;So, in this case, we can just print a tiny portion of the full model which will allow me to check the screw + hole + groove without needing to print the full thing.&lt;&#x2F;p&gt;
+&lt;p&gt;In the image below, it&#x27;s just a little chunk of the full model, but it has all the important parts that need test-fitting.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;skullvalanche.com&#x2F;blog&#x2F;rapid-prototyping&#x2F;test-slice.png&quot; alt=&quot;partial model slice&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Also if we look down in the corner, the estimated print time is down to 25 minutes from the 67 minutes in the full print. If it works, great, then we can print the full size model with confidence. If it doesn&#x27;t work, at least we saved time (and materials) by only printing a tiny little chunk.&lt;&#x2F;p&gt;
+&lt;p&gt;I kinda assume someday 3D printers will be cheap enough and good enough that they become a common household appliance, much like paper printers were after the 90s. Not everyone will be a 3D CAD modeller, of course, but being able to download a file and print out a part for &lt;em&gt;stuff&lt;&#x2F;em&gt; is extremely handy.&lt;&#x2F;p&gt;
+&lt;p&gt;Hooray for the future.&lt;&#x2F;p&gt;
+&lt;p&gt;On a more technical note for the 3D modelers out there: I find that shrinking the bolt diameter by .25mm and also expanding the screw hole diameter by .25mm from the theoretical in a 3D model tends to result in a perfect fit. 😁&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Zola&#x27;s ball</title>
         <published>2025-01-14T00:00:00+00:00</published>

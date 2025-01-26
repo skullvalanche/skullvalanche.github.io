@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Order matters: load pico first, then style.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="https://skullvalanche.com/blog/style.css">
+    <title>Skull's Blog</title>
+    
+      <link rel="alternate" type="application/atom+xml" title="RSS" href="https://skullvalanche.com/blog/atom.xml">
+    
+  </head>
+
+  <body>
+    <div id="theme-switcher">
+      <a href="#" data-theme-switcher="light">☀️</a><br/>
+      <a href="#" data-theme-switcher="dark">🌙</a><br/>
+    </div>
+    <section class="section">
+      <div class="container">
+<h1 class="title">
+  Rapid Prototyping with 3D printing
+</h1>
+<p class="subtitle"><strong>2025-01-26</strong></p>
+<p><em>Author's Note:</em> Many folks reading this may not know or care about 3D printing, so I'll try to keep the technical jargon to a minimum.</p>
+<p>I've been working on improving my CAD skills lately. I've had a 3D printer for a few years now, but for much of that time I mostly would just download other people's 3D models from various sites and print them. My ability to <em>imagine</em> a thing in my mind and then just make it into a physical thing was quite limited by my inability to use <em>real</em> CAD software.</p>
+<p>I mostly used <a href="https://tinkercad.com">TinkerCAD</a> for very simple designs. I could make a box. I could make a cylinder. I could make a sphere. I could combine those things in various ways, but it never really resulted in <em>slick</em> looking designs, just minimally functional.</p>
+<p>I'm now getting much better at using <a href="https://onshape.com">Onshape</a> which is way more full featured, but also a way steeper learning curve.</p>
+<p>Now is the time when I give a shout-out to Michael Laws for his Youtube series <a href="https://www.youtube.com/playlist?list=PLGqRUdq5ULsONnjEEPeBxxStEsobDKAtV">3D Design for 3D Printing</a>. Hugely helpful.</p>
+<p>With the increased complexity of designs I'm able to accomplish, I'm learning the importance of "will this little mechanical part work?" -- hinges, screw holes, interlocking parts, and all the other exacting aspects of a functional thingie often require a cycle of printing the thing, testing it, and adjusting the model again. 3D models on a computer are very exact, but the strand of hot plastic goo that comes out of a 3D printer is nowhere near as exact.</p>
+<p>The cycle of design -&gt; print -&gt; adjust design -&gt; print can be quite time consuming. 3D prints can take many hours to complete depending on size, and it is quite frustrating to wait many hours for something to print only to find out that the measurements in your computer model don't work once they're printed in the really real world.</p>
+<p>Fortunately, there's a trick one can do to make the adjust + printing cycle much faster. As an example, I'll use a project I'm working on right now, which involves a part that slides into a groove on another part, and a screw that will lock the slider in place.</p>
+<p><img src="https://skullvalanche.com/blog/rapid-prototyping/model.png" alt="3D Model" /></p>
+<p>I need to make sure the screw and the screw hole work well together. I also need to make sure the slider slab fits in the groove cut-out.</p>
+<p>When 3D printing stuff, you load your 3D model into an app called a "slicer" which plots out the path that the printer will follow as it builds up your print out of many very thin layers (slices).</p>
+<p>Here's an example of what that looks like:</p>
+<p><img src="https://skullvalanche.com/blog/rapid-prototyping/full-slice.png" alt="fully sliced= model" /></p>
+<p>Notice down in the corner it estimates that printing this stuff will take 67 minutes to print.</p>
+<p>BUT, this is a slicer application! In addition to "slicing" your model into many horizontal layers, The slicer can also make arbitrary cuts in your model, allowing you to discard the parts that don't need testing. You can just print the portion of your model that needs testing!</p>
+<p>So, in this case, we can just print a tiny portion of the full model which will allow me to check the screw + hole + groove without needing to print the full thing.</p>
+<p>In the image below, it's just a little chunk of the full model, but it has all the important parts that need test-fitting.</p>
+<p><img src="https://skullvalanche.com/blog/rapid-prototyping/test-slice.png" alt="partial model slice" /></p>
+<p>Also if we look down in the corner, the estimated print time is down to 25 minutes from the 67 minutes in the full print. If it works, great, then we can print the full size model with confidence. If it doesn't work, at least we saved time (and materials) by only printing a tiny little chunk.</p>
+<p>I kinda assume someday 3D printers will be cheap enough and good enough that they become a common household appliance, much like paper printers were after the 90s. Not everyone will be a 3D CAD modeller, of course, but being able to download a file and print out a part for <em>stuff</em> is extremely handy.</p>
+<p>Hooray for the future.</p>
+<p>On a more technical note for the 3D modelers out there: I find that shrinking the bolt diameter by .25mm and also expanding the screw hole diameter by .25mm from the theoretical in a 3D model tends to result in a perfect fit. 😁</p>
+
+<button role="button" onclick="window.location.href='..';">back</button>
+<script src="https://giscus.app/client.js"
+        data-repo="skullvalanche/skullvalanche.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk4Njk0ODQyOA=="
+        data-category="General"
+        data-category-id="DIC_kwDOBS66TM4CmAP0"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="https://skullvalanche.com/blog/giscus.css"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+    </section>
+  </body>
+  <script src="https://skullvalanche.com/blog/js/minimal-theme-switcher.js"></script>
+</html>
