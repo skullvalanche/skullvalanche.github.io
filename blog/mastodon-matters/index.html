@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
     <!-- Order matters: load pico first, then style.css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
     <link rel="stylesheet" href="https://skullvalanche.com/blog/style.css">
     <title>Skull's Blog</title>
     
-      <link rel="alternate" type="application/atom+xml" title="RSS" href="https://skullvalanche.com/blog/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="RSS"
+      href="https://skullvalanche.com/blog/atom.xml">
     
   </head>
 
   <body>
     <div id="theme-switcher">
-      <a href="#" data-theme-switcher="light">☀️</a><br/>
-      <a href="#" data-theme-switcher="dark">🌙</a><br/>
+      <a href="#" data-theme-switcher="light">☀️</a><br />
+      <a href="#" data-theme-switcher="dark">🌙</a><br />
     </div>
     <section class="section">
       <div class="container">
@@ -44,22 +46,44 @@
 <p>The irony of this rant is that I'm advocating for leaving those locked-in social network connections which you can't take with you... but in theory this is a one-time concern. Once you're the owner of your social network, that's it, it's yours from that point forward.</p>
 <p>Hopefully this convinces at least some folks to make the leap 🤞 - I will make a follow-up post about navigating the nuances of actually joining the Fediverse.</p>
 
+
 <button role="button" onclick="window.location.href='..';">back</button>
 <script src="https://giscus.app/client.js"
-        data-repo="skullvalanche/skullvalanche.github.io"
-        data-repo-id="MDEwOlJlcG9zaXRvcnk4Njk0ODQyOA=="
-        data-category="General"
-        data-category-id="DIC_kwDOBS66TM4CmAP0"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="https://skullvalanche.com/blog/giscus.css"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
+  data-repo="skullvalanche/skullvalanche.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk4Njk0ODQyOA=="
+  data-category="General"
+  data-category-id="DIC_kwDOBS66TM4CmAP0"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="dark"
+  data-lang="en"
+  crossorigin="anonymous"
+  async>
+</script>
+
+<script>
+function updateGiscusTheme() {
+  const theme = document.documentElement.getAttribute("data-theme") || themeSwitcher.schemeFromLocalStorage;
+  const giscusFrame = document.querySelector("iframe.giscus-frame");
+  if (giscusFrame) {
+    giscusFrame.contentWindow.postMessage({ 
+      giscus: { setConfig: { theme: theme } }
+    }, "https://giscus.app");
+  }
+}
+
+// Run on page load
+document.addEventListener("DOMContentLoaded", () => {
+  updateGiscusTheme();
+});
+
+// Listen for theme changes
+const observer = new MutationObserver(updateGiscusTheme);
+observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
 </script>
 </div>
     </section>
