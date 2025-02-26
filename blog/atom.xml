@@ -4,8 +4,79 @@
     <link rel="self" type="application/atom+xml" href="https://skullvalanche.com/blog/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://skullvalanche.com/blog"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-01-26T00:00:00+00:00</updated>
+    <updated>2025-02-25T00:00:00+00:00</updated>
     <id>https://skullvalanche.com/blog/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Designing a universal e-reader grip</title>
+        <published>2025-02-25T00:00:00+00:00</published>
+        <updated>2025-02-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Skullvalanche
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://skullvalanche.com/blog/ereader-grip/"/>
+        <id>https://skullvalanche.com/blog/ereader-grip/</id>
+        
+        <content type="html" xml:base="https://skullvalanche.com/blog/ereader-grip/">&lt;p&gt;I recently got a Kobo e-ink tablet to replace my Kindle. Amazon&#x27;s efforts to exert control over the Kindle devices &lt;a href=&quot;https:&#x2F;&#x2F;www.nytimes.com&#x2F;2009&#x2F;07&#x2F;18&#x2F;technology&#x2F;companies&#x2F;18amazon.html&quot;&gt;1&lt;&#x2F;a&gt; &lt;a href=&quot;https:&#x2F;&#x2F;wiki.rossmanngroup.com&#x2F;index.php?title=Amazon_Kindle_removes_download_feature_of_purchased_books&quot;&gt;2&lt;&#x2F;a&gt; finally pushed me to drop the platform entirely. The device still works, and maybe I&#x27;ll jailbreak it to free it from Amazon&#x27;s control, but on principle I&#x27;m just giving up on it.&lt;&#x2F;p&gt;
+&lt;p&gt;My Kobo reader is pretty identical in form-factor to the Kindle. Most e-ink readers are pretty similar in size, unless they&#x27;re doubling as a writing tablet, but at that point I don&#x27;t think of them as &quot;reader&quot; devices.&lt;&#x2F;p&gt;
+&lt;p&gt;So I have a couple e-reader devices, and they all suffer from the same problem: they&#x27;re designed to be slim and light and are incredibly uncomfortable to hold for long periods of time. They&#x27;re not really one handed devices. They&#x27;re &lt;em&gt;light&lt;&#x2F;em&gt; enough to be one-handed, but they&#x27;re too wide to be gripped&#x2F;held like a phone.&lt;&#x2F;p&gt;
+&lt;p&gt;As I was holding my new Kobo, my hand was cramping up and I thought about what would be better.&lt;&#x2F;p&gt;
+&lt;p&gt;I wanted something more ergonomic. Something that would feel more like holding a tool. Maybe something like a game controller? Those are designed to be held for long stretches of time.&lt;&#x2F;p&gt;
+&lt;p&gt;So I searched around some 3D printing models and found a game controller grip designed for a phone. Not bad, I can probably modify the dimensions a bit to make it fit a tablet. After all, it&#x27;s just a bigger slab shape.&lt;&#x2F;p&gt;
+&lt;p&gt;I ended up with this:&lt;&#x2F;p&gt;
+&lt;img src=&quot;game-controller-grip.jpg&quot; alt=&quot;a kobo e-reader nestled in some playstation style controller grips on the lower half of the sides&quot; &#x2F;&gt;
+&lt;p&gt;This was pretty comfy, but suffered from a few drawbacks. It was too low on the device. My thumb could only just barely reach the touch screen&#x27;s lower corner quadrant without doing some awkward hand gymnastics. Also, the grips flare out, which means the weight distribution of the device is further away during one-handed use, making it feel heavier.&lt;&#x2F;p&gt;
+&lt;p&gt;I needed to move the grips up the body of the tablet, and also reduce how flared the grips were.&lt;&#x2F;p&gt;
+&lt;p&gt;I started thinking that maybe I could just print some ergo grips that just kinda clipped&#x2F;clamped on to the side of the device. There&#x27;s a little bit of a bezel on the outer edge of the reader, perhaps it could clip on to that without interfering with the screen.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;Many&lt;&#x2F;em&gt; failed iterations later, I realized that there just isn&#x27;t enough bezel to clip on to the side of the reader with enough strength. Look at all the little test clips I printed just to realize it was a bad idea:&lt;&#x2F;p&gt;
+&lt;img src=&quot;test-clips.jpg&quot; &#x2F;&gt;
+&lt;p&gt;Side note: I did learn a lot about printing compliant mechanisms (clips with a bit of flex in them) though, so not entirely wasted effort.&lt;&#x2F;p&gt;
+&lt;p&gt;I went back to the mental drawing board and thought about those spring loaded gamer grip things they have for phones. Y&#x27;know, like these things:&lt;&#x2F;p&gt;
+&lt;img src=&quot;8bitdo.jpg&quot; alt=&quot;8Bitdo Ultimate Mobile Gaming Controller&quot; &#x2F;&gt;
+&lt;p&gt;A slick idea, but now it would need to have moving parts and some sort of spring! No clue how I would pull that off. Also, it would be really great if as I was working through all these iterations if it was modular such that I didn&#x27;t have to reprint &lt;em&gt;the whole thing&lt;&#x2F;em&gt; when I just want to try out a new grip.&lt;&#x2F;p&gt;
+&lt;p&gt;This was gonna be a massive redesign.&lt;&#x2F;p&gt;
+&lt;p&gt;I focused on the mechanical slider parts first, since that would require 2 interlocking parts, as well as some sort of spring action thing (?)&lt;&#x2F;p&gt;
+&lt;p&gt;Printing 2 separate parts that fit together with very little wiggle room is actually pretty challenging. Kinda requires knowing your printer&#x27;s capabilities (which requires a lot of trial an error) and then adding or subtracting a fraction of a millimeter in various places. In my case it&#x27;s 0.2mm of space that I need to leave in order to make one part fit inside another part.&lt;&#x2F;p&gt;
+&lt;p&gt;There&#x27;s also an additional consideration when 3D printing things, which is that they need to physically be printed out on a flat printer bed. You can&#x27;t print things in mid-air, so parts need to be designed to be built up layer-by-layer. The common workaround is printing &quot;supports&quot; alongside the desired object, with the intention of ripping them away afterwards. Somewhat like building scaffolding around a building during construction, and then removing it later. However, in practice, supports rarely come away from the print easily or cleanly, and you&#x27;re left with rough spots or a lot of &quot;post-processing&quot; work. In general, the less supports needed the better.&lt;&#x2F;p&gt;
+&lt;p&gt;Anyway, back to the redesign... I got a bit of inspiration from &lt;a href=&quot;https:&#x2F;&#x2F;than.gs&#x2F;m&#x2F;21917&quot;&gt;this design&lt;&#x2F;a&gt; which uses a typical office rubber band for the spring. Easy. Simple. Great!&lt;&#x2F;p&gt;
+&lt;p&gt;I made this combination of inner and outer slider parts, each with a little hook sticking out that the rubber band could wrap around. Then I added a rounded tab on the end of each of them, which I figured could act as the attachment point for whatever grips I came up with.&lt;&#x2F;p&gt;
+&lt;img src=&quot;side2.png&quot; &#x2F;&gt;
+&lt;img src=&quot;side1.png&quot; &#x2F;&gt;
+&lt;p&gt;I printed a few quick test pieces, just to make sure the slider parts were dimensioned properly. No sense printing both full size parts only to find out they don&#x27;t fit together.&lt;&#x2F;p&gt;
+&lt;img src=&quot;test-parts1.jpg&quot; &#x2F;&gt;
+&lt;p&gt;I ended up printing a couple variants, but fortunately they fit pretty well. Snug enough to slide without being too loose and rattling. I also printed a test tab, just to give myself a sense of how the attachment would look&#x2F;feel.&lt;&#x2F;p&gt;
+&lt;p&gt;Okay, now I could confidently print the full size slider pieces. Unfortunately, the tab on the outer slider required printing supports, but there was no good orientation to print that piece that didn&#x27;t involve an overhang of some kind. Sacrifices had to be made. The surface left behind after removing the supports wasn&#x27;t too bad, and it&#x27;s gonna be hidden inside the grip handle anyway, so nobody will see it.&lt;&#x2F;p&gt;
+&lt;p&gt;Next up, I got to designing the handles. I measured the height and diameter of a screwdriver handle I thought was pretty comfortable and pretty much just did a cylinder with those dimensions. Nothing super complicated... except I also needed to put a groove in the handles to actually grip onto the tablet! 😅&lt;&#x2F;p&gt;
+&lt;p&gt;And I needed to put slots in the handles for the tabs to slot into. And also some screw holes, to hold the whole thing together. So... maybe more complicated than I&#x27;d hoped, but this is still mostly a prototype.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s the handle I designed (and then just mirrored it for the other side)&lt;&#x2F;p&gt;
+&lt;img src=&quot;handles.png&quot; &#x2F;&gt;
+&lt;p&gt;I&#x27;ll probably try to design something more fancy and ergonomic in a future revision, but for now, this worked out pretty damn well.&lt;&#x2F;p&gt;
+&lt;p&gt;Behold! the final prototype!&lt;&#x2F;p&gt;
+&lt;img src=&quot;prototype1.jpg&quot; &#x2F;&gt;
+&lt;img src=&quot;prototype2.jpg&quot; &#x2F;&gt;
+&lt;img src=&quot;prototype3.jpg&quot; &#x2F;&gt;
+&lt;p&gt;I had to double-loop the rubber band for a stronger grip action, but I&#x27;m quite pleased with how well this worked out.&lt;&#x2F;p&gt;
+&lt;p&gt;It&#x27;s kinda amazing how holding a thing in your hands immediately gives you new ideas. Future revision ideas:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Ergonomic handles. These are fine, but some more curves and something to hook a finger into would be good.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The grooves for holding the tablet should maybe be part of the sliders, rather than part of the handles? That might free up the handle design from having to incorporate grooves for the tablet.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Maybe figure out a way to attach the sliders to the handles without needing screws at all. There&#x27;s some clever &quot;clip&quot; mechanisms I could try to incorporate.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Anyway, if you made it this far, thanks for reading!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Rapid Prototyping with 3D printing</title>
         <published>2025-01-26T00:00:00+00:00</published>
