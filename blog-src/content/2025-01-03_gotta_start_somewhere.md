@@ -1,6 +1,6 @@
 +++
 title = "Gotta start somewhere"
-date= 2025-01-03
+date = 2025-01-03
 +++
 
 Occasionally I have an itch to write things which are probably best captured in a semi-permanent, semi-long form medium. [Mastodon][mastodon] posts are artificially short and (at least in my case) ephemeral on purpose.
