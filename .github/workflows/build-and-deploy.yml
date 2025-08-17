@@ -1,0 +1,28 @@
+name: Build and Deploy Zola Site
+
+on:
+  push:
+    branches:
+      - main # Or your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Zola
+      uses: peaceiris/actions-zola@v0.20.0
+      with:
+        zola-version: 0.20.0
+
+    - name: Build site
+      run: zola build --source blog-src
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./blog-src/public # Assuming Zola builds to a 'public' directory within blog-src
