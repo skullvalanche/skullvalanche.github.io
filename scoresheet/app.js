@@ -202,25 +202,39 @@ confirmResetBtn.addEventListener('click', () => {
 });
 
 // --- Application Initialization ---
+// --- Application Initialization ---
 const init = async () => {
     try {
-        const urlParams = new URLSearchParams(window.location.search);
-        // CHANGE: URL parameter is now 'data'.
-        const dataFile = urlParams.get('data') || 'points';
-        const jsonFileName = `${dataFile}.json`;
+        let dataFile = 'points'; // Default data file
+        const searchString = window.location.search;
 
-        // CHANGE: localStorageKey is now 'PointsData-...'
+        // **NEW LOGIC**: Handle both ?keyless and ?data=value formats
+        if (searchString.length > 1) { // Check if there are any params at all
+            const urlParams = new URLSearchParams(searchString);
+            if (urlParams.has('data')) {
+                // Priority 1: Handle '?data=value' for explicit naming
+                dataFile = urlParams.get('data');
+            } else {
+                // Priority 2: Handle '?keyless' by getting the first parameter key
+                const firstKey = urlParams.keys().next().value;
+                if (firstKey) {
+                    dataFile = firstKey;
+                }
+            }
+        }
+
+        const jsonFileName = `${dataFile}.json`;
         localStorageKey = `PointsData-${dataFile}`;
 
         const response = await fetch(jsonFileName);
-        if (!response.ok) throw new Error(`Could not load '${jsonFileName}'.`);
+        if (!response.ok) throw new Error(`Could not load '${jsonFileName}'. Check the URL and filename.`);
 
         defaultData = await response.json();
 
         document.title = defaultData.meta.title;
         appTitle.textContent = defaultData.meta.title;
         appDescription.textContent = defaultData.meta.description;
-        bonusCategories = defaultData.meta.bonusCategories || [];
+        bonusCategories = defaultAta.meta.bonusCategories || [];
 
         attachEventListeners();
         loadData();
@@ -233,5 +247,6 @@ const init = async () => {
         appDescription.textContent = error.message;
     }
 };
+
 
 init();
