@@ -202,25 +202,15 @@ confirmResetBtn.addEventListener('click', () => {
 });
 
 // --- Application Initialization ---
-// --- Application Initialization ---
 const init = async () => {
     try {
         let dataFile = 'points'; // Default data file
-        const searchString = window.location.search;
+        const hashString = window.location.hash;
 
-        // **NEW LOGIC**: Handle both ?keyless and ?data=value formats
-        if (searchString.length > 1) { // Check if there are any params at all
-            const urlParams = new URLSearchParams(searchString);
-            if (urlParams.has('data')) {
-                // Priority 1: Handle '?data=value' for explicit naming
-                dataFile = urlParams.get('data');
-            } else {
-                // Priority 2: Handle '?keyless' by getting the first parameter key
-                const firstKey = urlParams.keys().next().value;
-                if (firstKey) {
-                    dataFile = firstKey;
-                }
-            }
+        // Read the data file name from the URL hash.
+        if (hashString.length > 1) {
+            // Remove the leading '#' to get the name.
+            dataFile = hashString.substring(1);
         }
 
         const jsonFileName = `${dataFile}.json`;
@@ -234,7 +224,7 @@ const init = async () => {
         document.title = defaultData.meta.title;
         appTitle.textContent = defaultData.meta.title;
         appDescription.textContent = defaultData.meta.description;
-        bonusCategories = defaultAta.meta.bonusCategories || [];
+        bonusCategories = defaultData.meta.bonusCategories || [];
 
         attachEventListeners();
         loadData();
@@ -247,6 +237,5 @@ const init = async () => {
         appDescription.textContent = error.message;
     }
 };
-
 
 init();
