@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <script>
+        // Use a self-invoking function to avoid global scope pollution
+        (function() {
+            // Get the current domain and protocol
+            const currentDomain = window.location.origin;
+
+            // Construct the new URL with the desired path and query parameters
+            const newUrl = `${currentDomain}/scoresheet/#80sdanceparty`;
+
+            // Redirect the user after a short delay
+            window.onload = function() {
+              setTimeout(() => {
+                  window.location.replace(newUrl);
+              }, 10);
+            };
+        })();
+    </script>
+    </body>
+</html>

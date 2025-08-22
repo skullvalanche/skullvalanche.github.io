@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "title": "80sDanceParty Points Tracker",
+    "description": "Keep track of points for various categories during 80sDanceParty",
+    "bonusCategories": [
+      "Bonuses"
+    ]
+  },
+  "groups": {
+    "Bands": [
+      {
+        "name": "The Cure",
+        "points": 1
+      },
+      {
+        "name": "Depeche Mode",
+        "points": 1
+      },
+      {
+        "name": "Duran Duran",
+        "points": 1
+      },
+      {
+        "name": "Echo and the Bunnymen",
+        "points": 1
+      },
+      {
+        "name": "Information Society",
+        "points": 1
+      },
+      {
+        "name": "INXS",
+        "points": 1
+      },
+      {
+        "name": "New Order/Joy Division",
+        "points": 1
+      },
+      {
+        "name": "OMD",
+        "points": 1
+      },
+      {
+        "name": "Pet Shop Boys",
+        "points": 1
+      },
+      {
+        "name": "Psychedelic Furs",
+        "points": 1
+      },
+      {
+        "name": "Sisters of Mercy",
+        "points": 1
+      },
+      {
+        "name": "Smiths/Morrissey",
+        "points": 1
+      }
+    ],
+    "Videos": [
+      {
+        "name": "Top of the Pops/Soul Train/etc.",
+        "points": 1
+      },
+      {
+        "name": "Video contains movie footage",
+        "points": 1
+      },
+      {
+        "name": "Inexplicable prop",
+        "points": 1
+      },
+      {
+        "name": "Saxophone solo",
+        "points": 1
+      },
+      {
+        "name": "Shirtless man",
+        "points": 1
+      },
+      {
+        "name": "80s CGI",
+        "points": 1
+      },
+      {
+        "name": "Keytar",
+        "points": 1
+      },
+      {
+        "name": "Stop motion animation",
+        "points": 1
+      },
+      {
+        "name": "Video has livestock",
+        "points": 3
+      }
+    ],
+    "Events": [
+      {
+        "name": "Veto song",
+        "points": 10
+      },
+      {
+        "name": "Dance song",
+        "points": 10
+      }
+    ],
+    "DJ Things": [
+      {
+        "name": "DJ leaves and doesn’t return in time",
+        "points": 100
+      },
+      {
+        "name": "Technical issue",
+        "points": 3
+      }
+    ],
+    "Songs": [
+      {
+        "name": "Artist’s OTHER band",
+        "points": 3
+      },
+      {
+        "name": "From a John Hughes movie",
+        "points": 3
+      },
+      {
+        "name": "Cover song",
+        "points": 1
+      },
+      {
+        "name": "Never Ending Story",
+        "points": 3
+      },
+      {
+        "name": "Star Trekkin'",
+        "points": 3
+      }
+    ],
+    "Bonuses": [
+      {
+        "name": "All Bands Played",
+        "points": 50,
+        "condition": {
+          "type": "everyItem",
+          "targetCategory": "Bands",
+          "property": "count",
+          "operator": ">",
+          "value": 0
+        }
+      },
+      {
+        "name": "Band Played 2+ Times",
+        "points": 25,
+        "condition": {
+          "type": "countMatchingItems",
+          "targetCategory": "Bands",
+          "property": "count",
+          "operator": ">=",
+          "value": 2
+        }
+      },
+      {
+        "name": "Band Played 4+ Times",
+        "points": 50,
+        "condition": {
+          "type": "countMatchingItems",
+          "targetCategory": "Bands",
+          "property": "count",
+          "operator": ">=",
+          "value": 4
+        }
+      }
+    ]
+  }
+}
