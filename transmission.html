@@ -8,13 +8,13 @@
             const currentDomain = window.location.origin;
 
             // Construct the new URL with the desired path and query parameters
-            const newUrl = `${currentDomain}/scoresheet/?data=transmission`;
+            const newUrl = `${currentDomain}/scoresheet/#transmission`;
 
-            // Redirect the user after a short delay to allow the loading message to be seen
+            // Redirect the user after a short delay
             window.onload = function() {
               setTimeout(() => {
                   window.location.replace(newUrl);
-              }, 10); // Redirect after 1.5 seconds
+              }, 10);
             };
         })();
     </script>
