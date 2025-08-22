@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "All Hands Points Tracker",
+    "description": "",
+    "bonusCategories": []
+  },
+  "groups": {
+    "Things": [
+      {
+        "name": "Fun Intro Music",
+        "points": 10
+      },
+      {
+        "name": "Weirdly inappropriate Intro Music",
+        "points": 10
+      },
+      {
+        "name": "Unmuted mic interruption",
+        "points": 10
+      },
+      {
+        "name": "Someone doing something odd on camera",
+        "points": 10
+      },
+      {
+        "name": "Someone calling in from a vehicle",
+        "points": 10
+      }
+    ]
+  }
+}
