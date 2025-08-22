@@ -1,35 +1,47 @@
 {
-  "meta": {
-    "title": "All Hands Points Tracker",
-    "description": "",
-    "bonusCategories": []
-  },
-  "groups": {
-    "Things": [
-      {
-        "name": "Fun Intro Music",
-        "points": 10
-      },
-      {
-        "name": "Weirdly inappropriate Intro Music",
-        "points": 10
-      },
-      {
-        "name": "Unmuted mic interruption",
-        "points": 10
-      },
-      {
-        "name": "Someone doing something odd on camera",
-        "points": 10
-      },
-      {
-        "name": "Someone calling in from a vehicle",
-        "points": 10
-      },
-      { "name": "point out the importance of AI", "points": 10}
-      { "name": "'No, guys, I don't think you understand'", "points": 50},
-      { "name": "'this is SO important'", "points": 50},
-      { "name": "'it doesn't matter'", "points": 50}
-    ]
-  }
+    "meta": {
+        "title": "All Hands Points Tracker",
+        "description": "",
+        "bonusCategories": []
+    },
+    "groups": {
+        "Things": [
+            {
+                "name": "Fun Intro Music",
+                "points": 10
+            },
+            {
+                "name": "Weirdly inappropriate Intro Music",
+                "points": 10
+            },
+            {
+                "name": "Unmuted mic interruption",
+                "points": 10
+            },
+            {
+                "name": "Someone doing something odd on camera",
+                "points": 10
+            },
+            {
+                "name": "Someone calling in from a vehicle",
+                "points": 10
+            },
+            {
+                "name": "point out the importance of AI",
+                "points": 10
+            },
+            {
+                "name": "'No, guys, I don't think you understand'",
+                "points": 50
+            },
+            {
+                "name": "'this is SO important'",
+                "points": 50
+            },
+            {
+                "name": "'it doesn't matter'",
+                "points": 50
+            }
+        ]
+    }
 }
