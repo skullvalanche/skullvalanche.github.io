@@ -1,0 +1,499 @@
+{
+  "meta": {
+    "title": "Minnesota State Fair Points Tracker",
+    "description": "Keep track of points at the State Fair",
+    "bonusCategories": [
+      "Bonuses"
+    ]
+  },
+  "groups": {
+    "Fair": [
+      {
+        "name": "'Great Minnesota Get Together'",
+        "points": 1
+      },
+      {
+        "name": "Butter carving",
+        "points": 1
+      },
+      {
+        "name": "Competing booths within sight of each other",
+        "points": 1
+      },
+      {
+        "name": "Contest to win a hot tub",
+        "points": 1
+      },
+      {
+        "name": "Egregious Minnesota pun",
+        "points": 1
+      },
+      {
+        "name": "Face-in-a-hole photo op",
+        "points": 1
+      },
+      {
+        "name": "Farm implement art",
+        "points": 1
+      },
+      {
+        "name": "Free yard stick",
+        "points": 1
+      },
+      {
+        "name": "Line more than 20 people long",
+        "points": 1
+      },
+      {
+        "name": "Medical emergency",
+        "points": 1
+      },
+      {
+        "name": "Novel inflatable object",
+        "points": 1
+      },
+      {
+        "name": "Old timey band",
+        "points": 1
+      },
+      {
+        "name": "One-man-band",
+        "points": 1
+      },
+      {
+        "name": "Only open seat but it's wet",
+        "points": 1
+      },
+      {
+        "name": "Overpriced lawn parking",
+        "points": 1
+      },
+      {
+        "name": "Scandanavian themed booth",
+        "points": 1
+      },
+      {
+        "name": "Something that's out of order",
+        "points": 1
+      },
+      {
+        "name": "Unusual solar-powered item",
+        "points": 1
+      }
+    ],
+    "Style": [
+      {
+        "name": "2nd Amendment shirt",
+        "points": 1
+      },
+      {
+        "name": "Airbrushed t-shirt",
+        "points": 1
+      },
+      {
+        "name": "Canadian tuxedo",
+        "points": 1
+      },
+      {
+        "name": "Corncob pipe",
+        "points": 1
+      },
+      {
+        "name": "Cosplayer",
+        "points": 1
+      },
+      {
+        "name": "Doomtree T-shirt",
+        "points": 1
+      },
+      {
+        "name": "Dream catcher earrings",
+        "points": 1
+      },
+      {
+        "name": "Fake campaign swag",
+        "points": 1
+      },
+      {
+        "name": "Goth",
+        "points": 1
+      },
+      {
+        "name": "Group with matching outfits",
+        "points": 1
+      },
+      {
+        "name": "Hat that can't be worn anywhere else",
+        "points": 1
+      },
+      {
+        "name": "Horribly uncomfortable costume",
+        "points": 1
+      },
+      {
+        "name": "Inappropriate footwear",
+        "points": 1
+      },
+      {
+        "name": "Minnesota uber sports fan",
+        "points": 1
+      },
+      {
+        "name": "Mullet",
+        "points": 1
+      },
+      {
+        "name": "Non-military all-camo guy",
+        "points": 1
+      },
+      {
+        "name": "Overalls",
+        "points": 1
+      },
+      {
+        "name": "Rat tail haircut",
+        "points": 1
+      },
+      {
+        "name": "Trump swag",
+        "points": 1
+      },
+      {
+        "name": "Crocs",
+        "points": 1
+      },
+      {
+        "name": "Vintage state fair clothing",
+        "points": 1
+      },
+      {
+        "name": "Prince T-shirt",
+        "points": 1
+      }
+    ],
+    "People": [
+      {
+        "name": "4H Club teenager",
+        "points": 1
+      },
+      {
+        "name": "Adult on someone's shoulders",
+        "points": 1
+      },
+      {
+        "name": "Child on a leash",
+        "points": 1
+      },
+      {
+        "name": "Child with facepaint",
+        "points": 1
+      },
+      {
+        "name": "Child with light up shoes",
+        "points": 1
+      },
+      {
+        "name": "Child with plastic weapon",
+        "points": 1
+      },
+      {
+        "name": "Child with wheelie shoes",
+        "points": 1
+      },
+      {
+        "name": "Miserable teenager with family",
+        "points": 1
+      },
+      {
+        "name": "Multiple children in a wagon",
+        "points": 1
+      },
+      {
+        "name": "Person lugging around giant stuffed animal",
+        "points": 1
+      },
+      {
+        "name": "Person over 6'5\"",
+        "points": 1
+      },
+      {
+        "name": "Person with an odd pet (lizard, parrot, etc)",
+        "points": 1
+      },
+      {
+        "name": "Person with horrible sunburn",
+        "points": 1
+      },
+      {
+        "name": "Shirtless dude with leathery skin",
+        "points": 1
+      },
+      {
+        "name": "Someone asleep",
+        "points": 1
+      },
+      {
+        "name": "Thick Minnesota accent",
+        "points": 1
+      },
+      {
+        "name": "Unlicensed vendor or advertiser",
+        "points": 1
+      }
+    ],
+    "Food & Drink": [
+      {
+        "name": "See someone you know",
+        "points": 1
+      },
+      {
+        "name": "Award winning fruit or vegetable",
+        "points": 1
+      },
+      {
+        "name": "Beer flight",
+        "points": 1
+      },
+      {
+        "name": "Chocolate \"poop\" snack",
+        "points": 1
+      },
+      {
+        "name": "Entire food item dropped on the ground",
+        "points": 1
+      },
+      {
+        "name": "Food bigger than person's head",
+        "points": 1
+      },
+      {
+        "name": "Food that does not belong on a stick, on a stick",
+        "points": 1
+      },
+      {
+        "name": "Healthy food",
+        "points": 1
+      },
+      {
+        "name": "Lutefisk",
+        "points": 1
+      },
+      {
+        "name": "Odd-flavored food or beverage",
+        "points": 1
+      },
+      {
+        "name": "Ordinary packaged food which has been deep fried",
+        "points": 1
+      },
+      {
+        "name": "Oversized alcoholic beverage",
+        "points": 1
+      },
+      {
+        "name": "Person with multiple corn on the cobs",
+        "points": 1
+      },
+      {
+        "name": "Pickle-flavored thing (not a pickle)",
+        "points": 1
+      },
+      {
+        "name": "Shoe print in spilled food",
+        "points": 1
+      },
+      {
+        "name": "Someone who needs a napkin",
+        "points": 1
+      },
+      {
+        "name": "Unusual flavored beverage",
+        "points": 1
+      },
+      {
+        "name": "Unusual jerky",
+        "points": 1
+      },
+      {
+        "name": "Weird deep-fried food",
+        "points": 1
+      },
+      {
+        "name": "Weird jelly/jam combination",
+        "points": 1
+      },
+      {
+        "name": "Wine made in Minnesota",
+        "points": 1
+      }
+    ],
+    "Activities": [
+      {
+        "name": "Art made by a child",
+        "points": 1
+      },
+      {
+        "name": "Craft you've never heard of",
+        "points": 1
+      },
+      {
+        "name": "Livestreamer",
+        "points": 1
+      },
+      {
+        "name": "Musician playing a non-traditional instrument",
+        "points": 1
+      },
+      {
+        "name": "News crew",
+        "points": 1
+      },
+      {
+        "name": "Person playing Pokemon Go",
+        "points": 1
+      },
+      {
+        "name": "Person playing Pokemon Go on multiple devices",
+        "points": 1
+      },
+      {
+        "name": "Person playing State Fair Bingo",
+        "points": 1
+      },
+      {
+        "name": "Person taking photo with iPad",
+        "points": 1
+      },
+      {
+        "name": "Person throwing things from the sky ride",
+        "points": 1
+      },
+      {
+        "name": "Politician handing out stuff",
+        "points": 1
+      },
+      {
+        "name": "Proselytizer",
+        "points": 1
+      },
+      {
+        "name": "Protestors",
+        "points": 1
+      },
+      {
+        "name": "Sharing food with a stranger",
+        "points": 1
+      },
+      {
+        "name": "Social media influencer posing",
+        "points": 1
+      },
+      {
+        "name": "Temper tantrum",
+        "points": 1
+      }
+    ],
+    "Animals": [
+      {
+        "name": "Animals in a competitive activity",
+        "points": 1
+      },
+      {
+        "name": "Baby animal",
+        "points": 1
+      },
+      {
+        "name": "Farm animal being led on the street",
+        "points": 1
+      },
+      {
+        "name": "Large animal sculpture",
+        "points": 1
+      },
+      {
+        "name": "Non-cop on horseback",
+        "points": 1
+      },
+      {
+        "name": "Person riding non-horse",
+        "points": 1
+      },
+      {
+        "name": "Ridiculous chicken",
+        "points": 1
+      },
+      {
+        "name": "Taxidermy",
+        "points": 1
+      }
+    ],
+    "Bonuses": [
+      {
+        "name": "All Fair Things",
+        "points": 25,
+        "condition": {
+          "type": "everyItem",
+          "targetCategory": "Fair",
+          "property": "count",
+          "operator": ">",
+          "value": 0
+        }
+      },
+      {
+        "name": "All Style Things",
+        "points": 25,
+        "condition": {
+          "type": "everyItem",
+          "targetCategory": "Style",
+          "property": "count",
+          "operator": ">",
+          "value": 0
+        }
+      },
+      {
+        "name": "All People Things",
+        "points": 25,
+        "condition": {
+          "type": "everyItem",
+          "targetCategory": "People",
+          "property": "count",
+          "operator": ">",
+          "value": 0
+        }
+      },
+      {
+        "name": "All Food & Drink Things",
+        "points": 25,
+        "condition": {
+          "type": "everyItem",
+          "targetCategory": "Food & Drink",
+          "property": "count",
+          "operator": ">",
+          "value": 0
+        }
+      },
+      {
+        "name": "All Activities Things",
+        "points": 25,
+        "condition": {
+          "type": "everyItem",
+          "targetCategory": "Activities",
+          "property": "count",
+          "operator": ">",
+          "value": 0
+        }
+      },
+      {
+        "name": "All Animals Things",
+        "points": 25,
+        "condition": {
+          "type": "everyItem",
+          "targetCategory": "Animals",
+          "property": "count",
+          "operator": ">",
+          "value": 0
+        }
+      }
+    ]
+  }
+}

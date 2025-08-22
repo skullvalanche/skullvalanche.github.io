@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Points Tracker JSON Generator</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font via Google Fonts CDN -->
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <style>
+        /* The @apply rules have been replaced with standard CSS */
+        body { 
+            font-family: 'Inter', sans-serif; 
+        }
+        .label {
+            display: block;
+            margin-bottom: 0.25rem; /* mb-1 */
+            font-size: 0.875rem; /* text-sm */
+            line-height: 1.25rem;
+            font-weight: 500; /* font-medium */
+            color: rgb(209 213 219); /* text-gray-300 */
+        }
+        .input {
+            background-color: rgb(55 65 81); /* bg-gray-700 */
+            border: 1px solid rgb(75 85 99); /* border border-gray-600 */
+            color: rgb(255 255 255); /* text-white */
+            font-size: 0.875rem; /* text-sm */
+            border-radius: 0.5rem; /* rounded-lg */
+            display: block;
+            width: 100%;
+            padding: 0.625rem; /* p-2.5 */
+        }
+        .input:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            --tw-ring-color: rgb(59 130 246); /* focus:ring-blue-500 */
+            box-shadow: 0 0 0 2px var(--tw-ring-color);
+            border-color: rgb(59 130 246); /* focus:border-blue-500 */
+        }
+        .btn {
+            color: white;
+            font-weight: 500; /* font-medium */
+            border-radius: 0.5rem; /* rounded-lg */
+            font-size: 0.875rem; /* text-sm */
+            padding: 0.625rem 1.25rem; /* px-5 py-2.5 */
+            text-align: center;
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .btn-primary { 
+            background-color: rgb(37 99 235); /* bg-blue-600 */
+        }
+        .btn-primary:hover {
+            background-color: rgb(29 78 216); /* hover:bg-blue-700 */
+        }
+        .btn-secondary {
+            background-color: rgb(79 70 229); /* bg-indigo-600 */
+        }
+        .btn-secondary:hover {
+            background-color: rgb(67 56 202); /* hover:bg-indigo-700 */
+        }
+        .btn-danger {
+            background-color: rgb(220 38 38); /* bg-red-600 */
+        }
+        .btn-danger:hover {
+            background-color: rgb(185 28 28); /* hover:bg-red-700 */
+        }
+        .btn-sm {
+            padding: 0.375rem 0.75rem; /* px-3 py-1.5 */
+            font-size: 0.75rem; /* text-xs */
+        }
+        .card {
+            background-color: rgb(31 41 55); /* bg-gray-800 */
+            border: 1px solid rgb(55 65 81); /* border border-gray-700 */
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.75rem; /* rounded-xl */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        .item-row {
+            background-color: rgb(55 65 81); /* bg-gray-700 */
+            padding: 1rem; /* p-4 */
+            border-radius: 0.5rem; /* rounded-lg */
+            display: flex;
+            align-items: center;
+            gap: 1rem; /* gap-4 */
+        }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-200 p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl font-extrabold text-blue-400">Points Tracker JSON
+          Generator</h1>
+        <p class="text-lg text-gray-400 mt-2">Create a configuration file for
+          the points tracker app.</p>
+      </div>
+
+      <!-- Meta Information -->
+      <div class="card">
+        <h2 class="text-2xl font-bold text-white mb-4">Metadata</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="meta-title" class="label">Tracker Title</label>
+            <input type="text" id="meta-title" class="input"
+              placeholder="e.g., Transmission Points Tracker">
+          </div>
+          <div>
+            <label for="meta-description" class="label">Tracker
+              Description</label>
+            <input type="text" id="meta-description" class="input"
+              placeholder="e.g., Points for the weekly show.">
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories Container -->
+      <div id="categories-container">
+        <!-- Categories will be dynamically added here -->
+      </div>
+
+      <!-- App Controls -->
+      <div class="flex items-center gap-4 mt-6">
+        <button id="add-category-btn" class="btn btn-secondary">Add
+          Category</button>
+        <button id="generate-json-btn"
+          class="btn btn-primary flex-grow">Generate JSON</button>
+      </div>
+
+      <!-- JSON Output -->
+      <div class="mt-8">
+        <label class="label">Generated JSON Output</label>
+        <div class="relative">
+          <textarea id="json-output" rows="15" class="input font-mono !text-xs"
+            readonly
+            placeholder="Your generated JSON will appear here..."></textarea>
+          <button id="copy-json-btn"
+            class="absolute top-2 right-2 btn btn-secondary btn-sm">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link to the generator's JavaScript file -->
+    <script src="generator.js"></script>
+
+  </body>
+</html>
