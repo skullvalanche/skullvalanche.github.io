@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Generic Points Tracker",
+    "description": "Keep track of points for various categories during the show.",
+    "bonusCategories": [
+      "Bonuses"
+    ]
+  },
+  "groups": {
+    "Category 1": [
+      {
+        "name": "Item 1",
+        "points": 10
+      },
+      {
+        "name": "Item 2",
+        "points": 10
+      }
+    ],
+    "Category 2": [
+      {
+        "name": "Cat2Item 1",
+        "points": 10
+      },
+      {
+        "name": "Cat2Item 2",
+        "points": 10
+      }
+    ],
+    "Bonuses": [
+      {
+        "name": "All Cat 1 Things",
+        "points": 50,
+        "condition": {
+          "type": "everyItem",
+          "targetCategory": "Category 1",
+          "property": "count",
+          "operator": ">",
+          "value": 0
+        }
+      },
+      {
+        "name": "Category 2 items 2+ times",
+        "points": 25,
+        "condition": {
+          "type": "countMatchingItems",
+          "targetCategory": "Category 2",
+          "property": "count",
+          "operator": ">=",
+          "value": 2
+        }
+      }
+    ]
+  }
+}
