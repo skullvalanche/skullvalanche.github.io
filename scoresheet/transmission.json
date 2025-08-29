@@ -9,6 +9,10 @@
   "groups": {
     "Bands": [
       {
+        "name": "A Flock Of Seagulls",
+        "points": 1
+      },
+      {
         "name": "David Bowie",
         "points": 1
       },
@@ -34,6 +38,10 @@
       },
       {
         "name": "Echo and the Bunnymen",
+        "points": 1
+      },
+      {
+        "name": "Erasure",
         "points": 1
       },
       {
@@ -82,6 +90,10 @@
       },
       {
         "name": "Talking Heads",
+        "points": 1
+      },
+      {
+        "name": "Tears For Fears",
         "points": 1
       }
     ],
