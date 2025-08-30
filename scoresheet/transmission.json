@@ -97,44 +97,6 @@
         "points": 1
       }
     ],
-    "Videos": [
-      {
-        "name": "Top of the Pops/Soul Train/etc.",
-        "points": 1
-      },
-      {
-        "name": "Video contains movie footage",
-        "points": 1
-      },
-      {
-        "name": "Video features livestock",
-        "points": 3
-      },
-      {
-        "name": "Band member in stripey shirt",
-        "points": 1
-      },
-      {
-        "name": "Inexplicable prop",
-        "points": 1
-      },
-      {
-        "name": "Saxophone solo",
-        "points": 1
-      },
-      {
-        "name": "Shirtless man",
-        "points": 1
-      },
-      {
-        "name": "80s CGI",
-        "points": 1
-      },
-      {
-        "name": "Keytar",
-        "points": 1
-      }
-    ],
     "Events": [
       {
         "name": "Veto song",
@@ -172,10 +134,6 @@
       },
       {
         "name": "DJ pitches some other event",
-        "points": 1
-      },
-      {
-        "name": "DJ calls new people “newbies”",
         "points": 1
       }
     ],
