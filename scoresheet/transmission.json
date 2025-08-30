@@ -65,10 +65,6 @@
         "points": 1
       },
       {
-        "name": "The Pixies",
-        "points": 1
-      },
-      {
         "name": "Prince",
         "points": 1
       },
@@ -77,7 +73,7 @@
         "points": 1
       },
       {
-        "name": "Replacements",
+        "name": "The Replacements",
         "points": 1
       },
       {
@@ -85,7 +81,7 @@
         "points": 1
       },
       {
-        "name": "Smiths/Morrissey",
+        "name": "The Smiths/Morrissey",
         "points": 1
       },
       {
@@ -118,7 +114,7 @@
       },
       {
         "name": "DJ plays the wrong song",
-        "points": 3
+        "points": 10
       },
       {
         "name": "Request kills the dance floor",
@@ -130,11 +126,11 @@
       },
       {
         "name": "Manatees!",
-        "points": 1
+        "points": 3
       },
       {
         "name": "DJ pitches some other event",
-        "points": 1
+        "points": 3
       }
     ],
     "Songs": [
@@ -147,11 +143,11 @@
         "points": 3
       },
       {
-        "name": "Electro-Industrial Set",
+        "name": "Electro-Industrial set",
         "points": 25
       },
       {
-        "name": "90s Dance Set",
+        "name": "90s Dance set",
         "points": 10
       },
       {
