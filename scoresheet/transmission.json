@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Transmission Points Tracker",
-    "description": "Keep track of points for various categories during Transmission",
+    "description": "Keep track of points for various categories during the show.",
     "bonusCategories": [
       "Bonuses"
     ]
@@ -77,7 +77,7 @@
         "points": 1
       },
       {
-        "name": "Sisters of Mercy",
+        "name": "The Sisters of Mercy",
         "points": 1
       },
       {
@@ -109,12 +109,16 @@
     ],
     "DJ Things": [
       {
+        "name": "DJ wears stripey shirt",
+        "points": 10
+      },
+      {
         "name": "DJ leaves and doesn’t return in time",
         "points": 100
       },
       {
         "name": "DJ plays the wrong song",
-        "points": 10
+        "points": 3
       },
       {
         "name": "Request kills the dance floor",
@@ -126,11 +130,11 @@
       },
       {
         "name": "Manatees!",
-        "points": 3
+        "points": 1
       },
       {
         "name": "DJ pitches some other event",
-        "points": 3
+        "points": 1
       }
     ],
     "Songs": [
@@ -143,11 +147,11 @@
         "points": 3
       },
       {
-        "name": "Electro-Industrial set",
+        "name": "Electro-Industrial Set",
         "points": 25
       },
       {
-        "name": "90s Dance set",
+        "name": "90s Dance Set",
         "points": 10
       },
       {
@@ -170,36 +174,22 @@
     "Bonuses": [
       {
         "name": "All Bands Played",
-        "points": 50,
-        "condition": {
-          "type": "everyItem",
-          "targetCategory": "Bands",
-          "property": "count",
-          "operator": ">",
-          "value": 0
-        }
+        "type": "everyItem",
+        "targetCategory": "Bands",
+        "points": 50
       },
       {
-        "name": "Band Played 2+ Times",
-        "points": 25,
-        "condition": {
-          "type": "countMatchingItems",
-          "targetCategory": "Bands",
-          "property": "count",
-          "operator": ">=",
-          "value": 2
-        }
+        "name": "Every DJ Thing",
+        "type": "everyItem",
+        "targetCategory": "DJ Things",
+        "points": 1000
       },
       {
-        "name": "Band Played 4+ Times",
-        "points": 50,
-        "condition": {
-          "type": "countMatchingItems",
-          "targetCategory": "Bands",
-          "property": "count",
-          "operator": ">=",
-          "value": 4
-        }
+        "name": "Band Played 3+ Times",
+        "type": "threshold",
+        "targetCategory": "Bands",
+        "threshold": 3,
+        "points": 25
       }
     ]
   }
