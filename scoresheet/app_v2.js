@@ -57,11 +57,8 @@ const evaluateBonusConditions = () => {
                 case 'between': {
                     // This bonus awards points for each item with a count within a specified range.
                     const { lower, upper } = bonus;
-                    targetItems.forEach(item => {
-                        if (item.count >= lower && item.count < upper) {
-                            bonusPoints += points;
-                        }
-                    });
+                    const matchingItems = targetItems.filter(item => item.count >= lower && item.count < upper);
+                    bonusPoints = matchingItems.length * points;
                     break;
                 }
             }
@@ -136,7 +133,11 @@ const renderPointsGroups = () => {
     }
 };
 
-const attachEventListeners = () => { pointsContainer.addEventListener('click', (event) => { const button = event.target.closest('.points-btn'); if (!button) return; const itemCard = button.closest('.item-card'); if (!itemCard) return; const { group, index } = itemCard.dataset; const isIncrement = button.classList.contains('points-plus-btn'); handlePointsUpdate(group, parseInt(index, 10), isIncrement); }); };
+const attachEventListeners = () => { pointsContainer.addEventListener('click', (event) => { const button = event.target.closest('.points-btn'); if (!button) return;
+ const itemCard = button.closest('.item-card'); if (!itemCard) return;
+ const { group, index } = itemCard.dataset;
+ const isIncrement = button.classList.contains('points-plus-btn');
+ handlePointsUpdate(group, parseInt(index, 10), isIncrement); }); };
 
 exportBtn.addEventListener('click', () => {
     let exportString = "Category\tItem\tCount\tPoints\tTotal\n";
