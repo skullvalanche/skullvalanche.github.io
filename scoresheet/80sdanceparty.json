@@ -148,36 +148,16 @@
     "Bonuses": [
       {
         "name": "All Bands Played",
-        "points": 50,
-        "condition": {
-          "type": "everyItem",
-          "targetCategory": "Bands",
-          "property": "count",
-          "operator": ">",
-          "value": 0
-        }
+        "type": "everyItem",
+        "targetCategory": "Bands",
+        "points": 50
       },
       {
-        "name": "Band Played 2+ Times",
-        "points": 25,
-        "condition": {
-          "type": "countMatchingItems",
-          "targetCategory": "Bands",
-          "property": "count",
-          "operator": ">=",
-          "value": 2
-        }
-      },
-      {
-        "name": "Band Played 4+ Times",
-        "points": 50,
-        "condition": {
-          "type": "countMatchingItems",
-          "targetCategory": "Bands",
-          "property": "count",
-          "operator": ">=",
-          "value": 4
-        }
+        "name": "Band Played 3+ Times",
+        "type": "threshold",
+        "targetCategory": "Bands",
+        "threshold": 3,
+        "points": 25
       }
     ]
   }

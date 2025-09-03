@@ -430,69 +430,39 @@
     "Bonuses": [
       {
         "name": "All Fair Things",
-        "points": 25,
-        "condition": {
-          "type": "everyItem",
-          "targetCategory": "Fair",
-          "property": "count",
-          "operator": ">",
-          "value": 0
-        }
+        "type": "everyItem",
+        "targetCategory": "Fair",
+        "points": 25
       },
       {
         "name": "All Style Things",
         "points": 25,
-        "condition": {
-          "type": "everyItem",
-          "targetCategory": "Style",
-          "property": "count",
-          "operator": ">",
-          "value": 0
-        }
+        "type": "everyItem",
+        "targetCategory": "Style"
       },
       {
         "name": "All People Things",
         "points": 25,
-        "condition": {
-          "type": "everyItem",
-          "targetCategory": "People",
-          "property": "count",
-          "operator": ">",
-          "value": 0
-        }
+        "type": "everyItem",
+        "targetCategory": "People"
       },
       {
         "name": "All Food & Drink Things",
         "points": 25,
-        "condition": {
-          "type": "everyItem",
-          "targetCategory": "Food & Drink",
-          "property": "count",
-          "operator": ">",
-          "value": 0
-        }
+        "type": "everyItem",
+        "targetCategory": "Food & Drink"
       },
       {
         "name": "All Activities Things",
         "points": 25,
-        "condition": {
-          "type": "everyItem",
-          "targetCategory": "Activities",
-          "property": "count",
-          "operator": ">",
-          "value": 0
-        }
+        "type": "everyItem",
+        "targetCategory": "Activities"
       },
       {
         "name": "All Animals Things",
         "points": 25,
-        "condition": {
-          "type": "everyItem",
-          "targetCategory": "Animals",
-          "property": "count",
-          "operator": ">",
-          "value": 0
-        }
+        "type": "everyItem",
+        "targetCategory": "Animals"
       }
     ]
   }
