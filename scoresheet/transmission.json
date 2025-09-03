@@ -101,15 +101,15 @@
       {
         "name": "Dance song",
         "points": 10
-      },
-      {
-        "name": "DJ Stripey Shirt shirt",
-        "points": 10
       }
     ],
     "DJ Things": [
       {
         "name": "DJ wears stripey shirt",
+        "points": 10
+      },
+      {
+        "name": "DJ Stripey Shirt shirt",
         "points": 10
       },
       {
