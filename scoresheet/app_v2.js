@@ -25,42 +25,32 @@ const evaluateBonusConditions = () => {
         if (!bonusGroup) return;
 
         bonusGroup.forEach(bonus => {
-            // Each bonus item is a self-contained rule.
-            // We calculate the points it awards and store it in `bonus.count`.
             let bonusPoints = 0;
-            const { type, points, targetCategory } = bonus;
+            const { type, points, targetCategory, threshold } = bonus;
 
-            // All bonus types need a target category. If it's missing or invalid, no points are awarded.
             if (!targetCategory) {
                 bonus.count = 0;
-                return; // continue to next bonus
+                return;
             }
             const targetItems = pointsData[targetCategory];
             if (!targetItems) {
                 bonus.count = 0;
-                return; // continue to next bonus
+                return;
             }
 
-            switch (type) {
-                case 'everyItem': {
-                    // This bonus is awarded once when the condition is met and is not removed.
-                    if (bonus.awarded) {
-                        bonusPoints = points;
-                        break;
-                    }
-                    if (targetItems.every(item => item.count > 0)) {
-                        bonusPoints = points;
-                        bonus.awarded = true; // Mark as awarded for the session.
-                    }
-                    break;
+            if (type === 'everyItem') {
+                if (bonus.awarded) {
+                    bonusPoints = points;
+                } else if (targetItems.every(item => item.count > 0)) {
+                    bonusPoints = points;
+                    bonus.awarded = true;
                 }
-                case 'between': {
-                    // This bonus awards points for each item with a count within a specified range.
-                    const { lower, upper } = bonus;
-                    const matchingItems = targetItems.filter(item => item.count >= lower && item.count < upper);
-                    bonusPoints = matchingItems.length * points;
-                    break;
-                }
+            } else if (type === 'threshold') {
+                targetItems.forEach(item => {
+                    if (item.count >= threshold) {
+                        bonusPoints += (item.count - (threshold - 1)) * points;
+                    }
+                });
             }
             bonus.count = bonusPoints;
         });
@@ -97,12 +87,12 @@ const createItemCard = (item, groupName) => {
         buttonHtml = `<button class="points-btn points-minus-btn button-minus"><i class="fas fa-minus"></i></button><button class="points-btn points-plus-btn button-plus"><i class="fas fa-plus"></i></button>`;
     }
 
-    const pointsDisplay = isBonusCategory ? `(Conditional)` : `<span class="font-bold text-blue-300">${item.points || 0}</span>`;
+    const pointsDisplay = `<span class="font-bold text-blue-300">${item.points || 0}</span>`;
 
     itemCard.innerHTML = `
         <div class="mb-2">
             <h3 class="text-xl font-semibold text-white leading-tight">${item.name}</h3>
-            <p class="text-sm text-gray-400">Points: ${pointsDisplay}</p>
+            <p class="text-sm text-gray-400">Value: ${pointsDisplay}</p>
         </div>
         <div class="flex items-center justify-between">
             <span class="text-sm font-medium text-gray-400">
@@ -133,11 +123,15 @@ const renderPointsGroups = () => {
     }
 };
 
-const attachEventListeners = () => { pointsContainer.addEventListener('click', (event) => { const button = event.target.closest('.points-btn'); if (!button) return;
- const itemCard = button.closest('.item-card'); if (!itemCard) return;
- const { group, index } = itemCard.dataset;
- const isIncrement = button.classList.contains('points-plus-btn');
- handlePointsUpdate(group, parseInt(index, 10), isIncrement); }); };
+const attachEventListeners = () => {
+    pointsContainer.addEventListener('click', (event) => {
+        const button = event.target.closest('.points-btn'); if (!button) return;
+        const itemCard = button.closest('.item-card'); if (!itemCard) return;
+        const { group, index } = itemCard.dataset;
+        const isIncrement = button.classList.contains('points-plus-btn');
+        handlePointsUpdate(group, parseInt(index, 10), isIncrement);
+    });
+};
 
 exportBtn.addEventListener('click', () => {
     let exportString = "Category\tItem\tCount\tPoints\tTotal\n";
