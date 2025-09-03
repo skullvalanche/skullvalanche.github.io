@@ -97,44 +97,6 @@
         "points": 1
       }
     ],
-    "Videos": [
-      {
-        "name": "Top of the Pops/Soul Train/etc.",
-        "points": 1
-      },
-      {
-        "name": "Video contains movie footage",
-        "points": 1
-      },
-      {
-        "name": "Video features livestock",
-        "points": 3
-      },
-      {
-        "name": "Band member in stripey shirt",
-        "points": 1
-      },
-      {
-        "name": "Inexplicable prop",
-        "points": 1
-      },
-      {
-        "name": "Saxophone solo",
-        "points": 1
-      },
-      {
-        "name": "Shirtless man",
-        "points": 1
-      },
-      {
-        "name": "80s CGI",
-        "points": 1
-      },
-      {
-        "name": "Keytar",
-        "points": 1
-      }
-    ],
     "Events": [
       {
         "name": "Veto song",
@@ -221,19 +183,10 @@
         "points": 50
       },
       {
-        "name": "Played Twice",
-        "type": "between",
+        "name": "Band Played 3+ Times",
+        "type": "threshold",
         "targetCategory": "Bands",
-        "lower": 2,
-        "upper": 3,
-        "points": 10
-      },
-      {
-        "name": "Played 3+ Times",
-        "type": "between",
-        "targetCategory": "Bands",
-        "lower": 3,
-        "upper": 1000000,
+        "threshold": 3,
         "points": 25
       }
     ]
