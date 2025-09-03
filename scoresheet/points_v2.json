@@ -135,10 +135,6 @@
       {
         "name": "DJ pitches some other event",
         "points": 1
-      },
-      {
-        "name": "DJ calls new people “newbies”",
-        "points": 1
       }
     ],
     "Songs": [
@@ -181,6 +177,18 @@
         "type": "everyItem",
         "targetCategory": "Bands",
         "points": 50
+      },
+      {
+        "name": "Every Event",
+        "type": "everyItem",
+        "targetCategory": "Events",
+        "points": 50
+      },
+      {
+        "name": "Every DJ Thing",
+        "type": "everyItem",
+        "targetCategory": "DJ Things",
+        "points": 1000
       },
       {
         "name": "Band Played 3+ Times",

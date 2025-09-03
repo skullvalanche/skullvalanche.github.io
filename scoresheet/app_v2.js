@@ -59,19 +59,32 @@ const evaluateBonusConditions = () => {
 
 const updateGlobalTotal = () => {
     evaluateBonusConditions();
-    let total = 0;
+    let regularTotal = 0;
+    const bonusDetails = [];
+
     for (const groupName in pointsData) {
-        pointsData[groupName].forEach(item => {
-            if (bonusCategories.includes(groupName)) {
-                // For bonuses, 'count' already holds the total calculated points.
-                total += item.count || 0;
-            } else {
-                // For regular items, it's points * count.
-                total += (item.points || 0) * (item.count || 0);
-            }
-        });
+        if (bonusCategories.includes(groupName)) {
+            pointsData[groupName].forEach(bonus => {
+                if (bonus.count > 0) {
+                    bonusDetails.push({ name: bonus.name, points: bonus.count });
+                }
+            });
+        } else {
+            pointsData[groupName].forEach(item => {
+                regularTotal += (item.points || 0) * (item.count || 0);
+            });
+        }
     }
-    globalTotalDisplay.textContent = total;
+
+    const bonusTotal = bonusDetails.reduce((sum, bonus) => sum + bonus.points, 0);
+    const grandTotal = regularTotal + bonusTotal;
+
+    let bonusHtml = bonusDetails.map(b => `<div class="text-sm">${b.name}: +${b.points}</div>`).join('');
+    globalTotalDisplay.innerHTML = `
+        <div class="text-4xl font-bold">${grandTotal}</div>
+        <div class="mt-2">${bonusHtml}</div>
+    `;
+
     saveData();
 };
 
@@ -109,6 +122,7 @@ const createItemCard = (item, groupName) => {
 const renderPointsGroups = () => {
     pointsContainer.innerHTML = '';
     for (const groupName in pointsData) {
+        if (bonusCategories.includes(groupName)) continue;
         const groupCard = document.createElement('div');
         groupCard.className = 'group-card p-6 rounded-2xl shadow-lg border border-gray-600';
         const groupTitle = document.createElement('h2');
@@ -135,17 +149,34 @@ const attachEventListeners = () => {
 
 exportBtn.addEventListener('click', () => {
     let exportString = "Category\tItem\tCount\tPoints\tTotal\n";
+    let regularTotal = 0;
+    const bonusDetails = [];
+
     for (const groupName in pointsData) {
-        const itemsWithCount = pointsData[groupName].filter(item => item.count > 0);
-        if (itemsWithCount.length === 0) continue;
-        itemsWithCount.forEach(item => {
-            const isBonus = bonusCategories.includes(groupName);
-            const points = isBonus ? 1 : (item.points || 0);
-            const total = item.count * points;
-            exportString += `${groupName}\t${item.name}\t${item.count}\t${points}\t${total}\n`;
-        });
+        if (bonusCategories.includes(groupName)) {
+            pointsData[groupName].forEach(bonus => {
+                if (bonus.count > 0) {
+                    bonusDetails.push({ name: bonus.name, points: bonus.count });
+                }
+            });
+        } else {
+            pointsData[groupName].forEach(item => {
+                if (item.count > 0) {
+                    const itemTotal = (item.points || 0) * (item.count || 0);
+                    exportString += `${groupName}\t${item.name}\t${item.count}\t${item.points || 0}\t${itemTotal}\n`;
+                    regularTotal += itemTotal;
+                }
+            });
+        }
     }
-    exportString += `\nTotal\t\t\t\t${globalTotalDisplay.textContent}`;
+
+    const bonusTotal = bonusDetails.reduce((sum, bonus) => sum + bonus.points, 0);
+    bonusDetails.forEach(b => {
+        exportString += `Bonuses\t${b.name}\t1\t${b.points}\t${b.points}\n`;
+    });
+
+    const grandTotal = regularTotal + bonusTotal;
+    exportString += `\nTotal\t\t\t\t${grandTotal}`;
     navigator.clipboard.writeText(exportString).then(() => { alert("Score data copied to clipboard!"); }).catch(err => console.error('Failed to copy points: ', err));
 });
 
