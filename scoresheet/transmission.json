@@ -93,13 +93,23 @@
         "points": 1
       }
     ],
-    "Events": [
+    "A Events": [
       {
-        "name": "Veto song",
+        "name": "A Veto song",
         "points": 10
       },
       {
-        "name": "Dance song",
+        "name": "A Dance song",
+        "points": 10
+      }
+    ],
+    "C Events": [
+      {
+        "name": "C Veto song",
+        "points": 10
+      },
+      {
+        "name": "C Dance song",
         "points": 10
       }
     ],
@@ -129,10 +139,6 @@
         "points": 3
       },
       {
-        "name": "Manatees!",
-        "points": 1
-      },
-      {
         "name": "DJ pitches some other event",
         "points": 1
       }
@@ -155,11 +161,15 @@
         "points": 10
       },
       {
-        "name": "0 or 5+ birthday sets",
+        "name": "No birthday sets",
         "points": 3
       },
       {
         "name": "Artist’s OTHER band",
+        "points": 3
+      },
+      {
+        "name": "Non-English",
         "points": 3
       },
       {
@@ -189,7 +199,70 @@
         "type": "threshold",
         "targetCategory": "Bands",
         "threshold": 3,
+        "points": 5
+      },
+      {
+        "name": "Band Played 5+ Times",
+        "type": "threshold",
+        "targetCategory": "Bands",
+        "threshold": 5,
         "points": 25
+      },
+      {
+        "name": "4+ A Veto Songs",
+        "type": "threshold",
+        "targetCategory": "A Veto Songs",
+        "threshold": 4,
+        "points": 25
+      },
+      {
+        "name": "4+ A Dance Songs",
+        "type": "threshold",
+        "targetCategory": "A Dance Songs",
+        "threshold": 4,
+        "points": 25
+      },
+      {
+        "name": "4+ C Veto Songs",
+        "type": "threshold",
+        "targetCategory": "C Veto Songs",
+        "threshold": 4,
+        "points": 25
+      },
+      {
+        "name": "4+ C Dance Songs",
+        "type": "threshold",
+        "targetCategory": "C Dance Songs",
+        "threshold": 4,
+        "points": 25
+      },
+      {
+        "name": "All 5 A Veto Songs",
+        "type": "threshold",
+        "targetCategory": "A Veto Songs",
+        "threshold": 5,
+        "points": 100
+      },
+      {
+        "name": "All 5 A Dance Songs",
+        "type": "threshold",
+        "targetCategory": "A Dance Songs",
+        "threshold": 5,
+        "points": 100
+      },
+      {
+        "name": "All 5 C Veto Songs",
+        "type": "threshold",
+        "targetCategory": "C Veto Songs",
+        "threshold": 5,
+        "points": 100
+      },
+      {
+        "name": "All 5 C Dance Songs",
+        "type": "threshold",
+        "targetCategory": "C Dance Songs",
+        "threshold": 5,
+        "points": 100
       }
     ]
   }
