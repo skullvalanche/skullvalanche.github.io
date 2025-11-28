@@ -16,8 +16,35 @@ const confirmResetBtn = document.getElementById('confirm-reset-btn');
 const cancelResetBtn = document.getElementById('cancel-reset-btn');
 
 const initializeDataWithCounts = (sourceGroups) => { const i = JSON.parse(JSON.stringify(sourceGroups)); for (const g in i) { i[g].forEach(item => { if (item.count === undefined) item.count = 0; }); } return i; };
+
+const mergeData = (freshGroups, savedData) => {
+    const merged = {};
+    for (const groupName in freshGroups) {
+        merged[groupName] = freshGroups[groupName].map(freshItem => {
+            const item = { ...freshItem };
+            // Default state
+            item.count = 0;
+
+            // Restore state from saved data if it exists
+            if (savedData && savedData[groupName]) {
+                const savedItem = savedData[groupName].find(si => si.name === freshItem.name);
+                if (savedItem) {
+                    item.count = savedItem.count || 0;
+                    if (savedItem.awarded !== undefined) item.awarded = savedItem.awarded;
+                }
+            }
+            return item;
+        });
+    }
+    return merged;
+};
+
 const saveData = () => localStorage.setItem(localStorageKey, JSON.stringify(pointsData));
-const loadData = () => { const d = localStorage.getItem(localStorageKey); pointsData = d ? JSON.parse(d) : initializeDataWithCounts(defaultData.groups); };
+const loadData = () => {
+    const d = localStorage.getItem(localStorageKey);
+    const savedData = d ? JSON.parse(d) : null;
+    pointsData = mergeData(defaultData.groups, savedData);
+};
 
 const evaluateBonusConditions = () => {
     bonusCategories.forEach(groupName => {
