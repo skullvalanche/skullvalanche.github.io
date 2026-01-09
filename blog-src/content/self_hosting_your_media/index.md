@@ -19,9 +19,69 @@ Speaking for myself, I have far too much media data to be worth paying someone e
 
 Which brings us to the most budget friendly option: **self-hosting** 🎉
 
-Storing media files on a computer you own (self-hosting) is basically free, other than paying for the electricity needed to keep the computer running.
+Storing media files on a your own hardware (self-hosting) is basically free.
 
-Now, not everyone has a spare computer handy for this, so admittedly there is potentially the one-time cost of obtaining a computer with enough storage to handle being a media storage server, but old computers are generally easy to come by for cheap, and this setup *does not* require a particularly fast computer. The thing to consider most is *storage* -- make sure you have a large enough drive to hold all your media (with room to spare).
+Now, not everyone has a spare computer handy for this, so admittedly there is potentially the one-time cost of obtaining a computer with enough storage to handle being a media storage server, but old computers are generally easy to come by for cheap, and this setup *does not require a particularly fast computer*. The thing to consider most is *storage* -- make sure you have a large enough drive to hold all your media (with room to spare). Also keep in mind this is a one-time cost, once it's up and running, you're only paying for electricity to keep the computer running.
 
-Let's say we have 2 TB of media.
+# Okay, let's get started
 
+The basic components of this whole idea are just stitching together 3 technologies:
+
+1. A computer to run as a NAS (Network Attached Storage)
+2. The Jellyfin app (free server software to make accessing your media easy)
+3. Tailscale (free VPN software to make Jellyfin accessible even when you're away from your home network)
+
+# a NAS computer
+
+If you search for "NAS" on the internet, there's a lot of specialized custom computer hardware out there for running a NAS... and that's great, there's definitely some advantages to having specialized hardware for the purpose, but it's not *necessary*, it's just nice to have. Most of those specialized computers are built around the idea of having critical data resiliency in the event of failures, or having a whole team of people trying to access the data at the same time. If that's your situation, definitely look into those options, but if it's just 1 or 2 people who need to access some music or movies sometimes, a dedicated NAS computer is probably overkill.
+
+*Note:* having a backup copy of your data is always a good idea. Hard drives will fail eventually. If it's data you can't replace, always have a backup copy of it. Just remember that your **backup** copy of your media probably doesn't need to be online 24/7.
+
+# Jellyfin
+
+Jellyfin is a free app which runs on Windows, Mac, or Linux computers. There's some initial setup where you tell it which folder(s) contain your media files, then it just runs in the background as a server. 'Server' in this context just means that it makes something available over the network.
+
+Download the it from [Jellyfin.org](https://jellyfin.org) -- be sure to get the version which matches your NAS operating system.
+
+You can follow the official [Jellyfin Quick Start](https://jellyfin.org/docs/general/quick-start/) to install and configure it.
+
+
+## Boring but kinda important Networking Concepts
+
+I apologize for using the crutch of metaphors, but sometimes they're the best option.
+
+**IP addresses** are sorta like a network "mailing address". When you send network signals (packets) out on to your network, they need to know where to go. IP addresses are part of that but they're more like an address to an apartment building.
+
+**Network ports** are like the individual apartment numbers within that building.
+
+Every computer on a network has an IP address, but since a computer could (potentially) be running multiple "server" services, those services need to use a specific *port* to ensure they don't interfere with each other.
+
+... That's probably still a bit confusing. Let's try a more specific example.
+
+Once you set up and configure Jellyfin, and it's running in the background on your NAS computer, it should be accessible to other computers on your home network via a web browser. By default, Jellyfin is accessible at port 8096.
+
+Let's pretend the NAS/Jellyfin computer has the IP address 10.0.0.50 (this is an example, your IP address will almost certainly be different. It should be in your Jellyfin computer's network settings.)
+
+Given our example IP, this means on *any other device on your home network* you could open a browser and go to http://10.0.0.50:8096/ and play to your media files. Your own private Spotify/Netflix on your home network. 🥳
+
+*Note:* the "Extra Credit" sections in the quick start guide mention "remote access" but doesn't fully come out and endorse Tailscale, so... let's pick up where they leave off.
+
+# Tailscale
+
+First, a quick distinction about VPNs: VPN (Virtual Private Network) is a *technology*, not a service. 
+
+Confusingly, more often than not the term "VPN" has come to mean "a company that provides a very specific use of VPN technology as a service". Kinda like if the term "data storage" became synonymous with companies like Dropbox, Google Drive, OneDrive, etc. even though "data storage" could also mean a USB stick or the built in storage in your phone.
+
+Broadly speaking, VPN the *techology* allows you to access computers as though they were on the same local network as your computer, even if you're in a coffee shop in Chicago and the other computer is on your home network in Tokyo. Pretty damn cool.
+
+Tailscale is a VPN provider in the *technology* sense, not the "we will try to maintain your privacy from websites" sense.
+
+Historically, setting up a VPN was a fairly technically daunting task, and not something I would recommend to most people. Tailscale has done a fabulous job of making it so simple anyone can do it.
+
+Tailscale offers a free-for-personal use account. You can sign up for an account at https://login.tailscale.com/start -- they offer a number of different ways to sign up.
+
+Once you have created an account you are automatically given a "Tailnet" -- This is your personal network which allows you to communicate with all other devices on your tailnet.
+
+There's a tailscale "client" app which you will need to install on all the devices you want to be able to communicate with your Jellyfin server.
+
+At a minimum, you will need to install the tailscale client app on your Jellyfin server machine, and also on your daily-driver computer. Once installed, you simply run it, tell it to connect to your tailnet, and now you are able to 
