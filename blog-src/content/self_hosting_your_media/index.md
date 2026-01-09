@@ -58,23 +58,27 @@ Every computer on a network has an IP address, but since a computer could (poten
 
 ... That's probably still a bit confusing. Let's try a more specific example.
 
-Once you set up and configure Jellyfin, and it's running in the background on your NAS computer, it should be accessible to other computers on your home network via a web browser. By default, Jellyfin is accessible at port 8096.
+Once you set up and configure Jellyfin, and it's running in the background on your NAS computer, it should be accessible to other computers on your home network via a web browser. By default, Jellyfin is accessible at port 8096. (We'll need that port number in a moment.)
 
-Let's pretend the NAS/Jellyfin computer has the IP address 10.0.0.50 (this is an example, your IP address will almost certainly be different. It should be in your Jellyfin computer's network settings.)
+Let's pretend the NAS/Jellyfin computer has the IP address `10.0.0.50` (your IP address will be different. Get it from your Jellyfin computer's network settings.)
 
-Given our example IP, this means on *any other device on your home network* you could open a browser and go to http://10.0.0.50:8096/ and play to your media files. Your own private Spotify/Netflix on your home network. 🥳
+Given our example IP, this means on *any other device on your home network* you can point a browser  to http://10.0.0.50:8096/ (the IP address + `:` + port number) and play to your media files. 
 
-*Note:* the "Extra Credit" sections in the quick start guide mention "remote access" but doesn't fully come out and endorse Tailscale, so... let's pick up where they leave off.
+Behold! Your own private Spotify/Netflix on your home network. 🥳
+
+But what about when *you're not at home*?
+
+*Note:* the "Extra Credit" sections in the quick start guide mention "remote access" but doesn't specifically say Tailscale, so... let's pick up where they leave off.
 
 # Tailscale
 
-First, a quick distinction about VPNs: VPN (Virtual Private Network) is a *technology*, not a service. 
+First, a quick distinction about VPNs: VPN (Virtual Private Network) is a *technology*, not a product. 
 
-Confusingly, more often than not the term "VPN" has come to mean "a company that provides a very specific use of VPN technology as a service". Kinda like if the term "data storage" became synonymous with companies like Dropbox, Google Drive, OneDrive, etc. even though "data storage" could also mean a USB stick or the built in storage in your phone.
+Confusingly, more often than not the term "VPN" has come to mean "a company that provides a very specific use of VPN technology as a service to try to help you stay anonymous".
 
-Broadly speaking, VPN the *techology* allows you to access computers as though they were on the same local network as your computer, even if you're in a coffee shop in Chicago and the other computer is on your home network in Tokyo. Pretty damn cool.
+Broadly speaking, VPN the *techology* allows you to access computers as though they were on the same local network as you, even if you're across the planet from each other.
 
-Tailscale is a VPN provider in the *technology* sense, not the "we will try to maintain your privacy from websites" sense.
+Tailscale is a VPN provider in the *technology* sense, not the we will try to maintain your privacy sense.
 
 Historically, setting up a VPN was a fairly technically daunting task, and not something I would recommend to most people. Tailscale has done a fabulous job of making it so simple anyone can do it.
 
