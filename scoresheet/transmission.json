@@ -141,6 +141,10 @@
       {
         "name": "DJ pitches some other event",
         "points": 1
+      },
+      {
+        "name": "DJ plays the same song twice",
+        "points": 25
       }
     ],
     "Songs": [
