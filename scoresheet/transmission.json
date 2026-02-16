@@ -210,7 +210,7 @@
         "type": "threshold",
         "targetCategory": "Bands",
         "threshold": 5,
-        "points": 25
+        "points": 20
       },
       {
         "name": "4+ [A] Veto Songs",
