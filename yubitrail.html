@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YubiTrail</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #1a1a0e;
+      color: #c8b45a;
+      font-family: "Courier New", monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.25rem;
+      color: #e8d87a;
+    }
+
+    .subtitle {
+      font-size: 0.8rem;
+      color: #7a6a30;
+      margin-bottom: 2rem;
+      letter-spacing: 0.1em;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      background: #0d0d06;
+      border: 1px solid #5a4a20;
+      color: #c8b45a;
+      font-family: "Courier New", monospace;
+      font-size: 1rem;
+      padding: 0.6rem 0.8rem;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #c8b45a;
+    }
+
+    input[type="text"]::placeholder {
+      color: #3a3010;
+    }
+
+    button {
+      background: #3a2a00;
+      border: 1px solid #c8b45a;
+      color: #c8b45a;
+      font-family: "Courier New", monospace;
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+    }
+
+    button:hover {
+      background: #5a4a10;
+    }
+
+    .trail {
+      width: 100%;
+      max-width: 600px;
+      border: 1px solid #3a2a00;
+      background: #0d0d06;
+      min-height: 200px;
+      padding: 1rem;
+      overflow-y: auto;
+      max-height: 400px;
+    }
+
+    .event {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #1a1a06;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .event.positive { color: #7aaa5a; }
+    .event.negative { color: #cc5544; }
+
+    .event .letter {
+      color: #7a6a30;
+      min-width: 2rem;
+      font-size: 0.75rem;
+      align-self: center;
+    }
+
+    .result {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid #5a4a20;
+      text-align: center;
+      font-size: 1.1rem;
+      display: none;
+    }
+
+    .result.survived {
+      border-color: #7aaa5a;
+      color: #7aaa5a;
+      background: #0a1a06;
+    }
+
+    .result.died {
+      border-color: #cc5544;
+      color: #cc5544;
+      background: #1a0600;
+    }
+
+    .score-bar {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 0.75rem;
+      height: 8px;
+      background: #1a1a06;
+      border: 1px solid #3a2a00;
+      display: none;
+    }
+
+    .score-fill {
+      height: 100%;
+      transition: width 0.1s, background 0.3s;
+    }
+
+    .instructions {
+      width: 100%;
+      max-width: 600px;
+      font-size: 0.75rem;
+      color: #4a3a10;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .empty-message {
+      color: #3a3010;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>YUBITRAIL</h1>
+  <p class="subtitle">THE YEAR IS 1848. YOUR YUBIKEY IS YOUR WAGON.</p>
+
+  <div class="input-area">
+    <input type="text" id="otp-input" placeholder="Touch your YubiKey..." autocomplete="off" />
+    <button onclick="runTrail()">GO WEST</button>
+  </div>
+
+  <div class="score-bar" id="score-bar">
+    <div class="score-fill" id="score-fill"></div>
+  </div>
+
+  <div class="trail" id="trail">
+    <div class="empty-message">Waiting for your OTP...</div>
+  </div>
+
+  <div class="result" id="result"></div>
+
+  <div class="instructions">
+    Insert your YubiKey and tap it. Each vowel in the OTP brings good fortune; each consonant brings hardship.<br>
+    Or type any string of letters and press GO WEST.
+  </div>
+
+<script>
+  const vowels = new Set(['a','e','i','o','u','y']);
+
+  const found_items = ["wild fruit", "a native guide", "a shiny bottle cap", "abandoned supplies", "fresh water spring"];
+  const animals = ["bear", "buffalo", "squirrel", "deer", "frog", "rabbit", "elk"];
+  const wagon_parts = ["yoke", "tongue", "wheel", "axle", "spokes", "canvas cover"];
+  const party_members = ["Jenkins", "Jimbo", "Ethel", "Steve", "Stella", "Mary Beth", "Mary Jo", "Mary Louise", "Mary Kate", "Mary Francis"];
+  const diseases = ["dysentery", "typhoid", "influenza", "cholera", "scurvy", "measles", "mountain fever", "food poisoning", "tuberculosis"];
+  const injuries = ["broken arm", "broken leg", "concussion", "hangnail", "stubbed toe", "a terrible pimple"];
+
+  function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function randInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function getPositive() {
+    const options = [
+      `Found ${pick(found_items)}.`,
+      `Hunted a ${pick(animals)}.`,
+      `Bought a wagon ${pick(wagon_parts)}.`,
+      "Caulked the wagon and floated across.",
+      `Mended the wagon ${pick(wagon_parts)}.`,
+      `Bought ${randInt(1,30)} sets of clothes.`,
+      "Clear skies and fair weather.",
+      "Good grazing land for the oxen.",
+    ];
+    return pick(options);
+  }
+
+  function getNegative() {
+    const options = [
+      `Bandits shot ${pick(party_members)}.`,
+      `${pick(party_members)} has a ${pick(injuries)}.`,
+      `${pick(party_members)} has ${pick(diseases)}.`,
+      "Wagon was attacked by wolves.",
+      "Wagon broke an axle.",
+      "Wagon capsized in the river.",
+      `Lost the trail. Lost ${randInt(1,12)} days.`,
+      "Mosquitos!",
+      "Bad water.",
+      "No water.",
+      "An ox died.",
+      "Harsh winds slowed progress.",
+    ];
+    return pick(options);
+  }
+
+  // YubiKey OTPs start with vvcccc — strip that prefix
+  const OTP_PREFIX_LENGTH = 6;
+
+  function runTrail() {
+    const raw = document.getElementById('otp-input').value.trim().toLowerCase();
+    if (!raw) return;
+
+    // Strip the static yubikey prefix if it looks like an OTP
+    const otp = raw.startsWith('vv') ? raw.slice(OTP_PREFIX_LENGTH) : raw;
+
+    const trailEl = document.getElementById('trail');
+    const resultEl = document.getElementById('result');
+    const scoreBarEl = document.getElementById('score-bar');
+    const scoreFillEl = document.getElementById('score-fill');
+
+    trailEl.innerHTML = '';
+    resultEl.style.display = 'none';
+    scoreBarEl.style.display = 'block';
+
+    let score = 0;
+
+    // Reveal events one by one for drama
+    let i = 0;
+    function step() {
+      if (i >= otp.length) {
+        // Show final result
+        resultEl.style.display = 'block';
+        if (score < 1) {
+          resultEl.className = 'result died';
+          resultEl.textContent = `You have died of ${pick(diseases)}. Final score: ${score}`;
+        } else {
+          resultEl.className = 'result survived';
+          resultEl.textContent = `You made it to Oregon! Final score: ${score}`;
+        }
+        return;
+      }
+
+      const letter = otp[i];
+      if (letter < 'a' || letter > 'z') { i++; step(); return; } // skip non-letters
+
+      const num = letter.charCodeAt(0) - 96; // a=1, b=2, etc.
+      const isVowel = vowels.has(letter);
+
+      if (isVowel) {
+        score += num + 50;
+      } else {
+        score -= num;
+      }
+
+      const event = document.createElement('div');
+      event.className = `event ${isVowel ? 'positive' : 'negative'}`;
+
+      const letterTag = document.createElement('span');
+      letterTag.className = 'letter';
+      letterTag.textContent = `[${letter}]`;
+
+      const text = document.createElement('span');
+      text.textContent = isVowel ? getPositive() : getNegative();
+
+      event.appendChild(letterTag);
+      event.appendChild(text);
+      trailEl.appendChild(event);
+      trailEl.scrollTop = trailEl.scrollHeight;
+
+      // Update score bar
+      const clampedScore = Math.max(0, Math.min(score, 300));
+      const pct = (clampedScore / 300) * 100;
+      scoreFillEl.style.width = pct + '%';
+      scoreFillEl.style.background = score < 1 ? '#cc5544' : score < 100 ? '#c8a040' : '#7aaa5a';
+
+      i++;
+      setTimeout(step, 60);
+    }
+
+    step();
+    document.getElementById('otp-input').value = '';
+  }
+
+  // Submit on Enter
+  document.getElementById('otp-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') runTrail();
+  });
+
+  // Auto-submit when a YubiKey OTP is detected (ends with Enter after ~44 chars)
+  document.getElementById('otp-input').addEventListener('input', function() {
+    const val = this.value;
+    // YubiKey OTPs are 44 chars
+    if (val.length >= 44 && val.startsWith('vv')) {
+      setTimeout(runTrail, 100);
+    }
+  });
+</script>
+</body>
+</html>
